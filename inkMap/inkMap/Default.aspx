@@ -34,7 +34,7 @@
                     <br />
                     <a class="btn btn-lg btn-block" id="signIn" onclick="showSignInContent()">Sign In</a>
                     <a class="btn btn-lg btn-block" id="createAccount" onclick="showCustomerAccountModule()">Create Account</a>
-                    <a class="btn btn-lg btn-block" id="registerArtist">Register As an Artist</a>
+                    <a class="btn btn-lg btn-block" id="registerArtist" onclick="showArtistAccountModule()">Register As an Artist</a>
                 </div>
 
                 <div class="col-md-6" id="signInModule">
@@ -116,6 +116,77 @@
                     <br />
                     <br />
                     <asp:LinkButton ID="lbtnCreateAccount" class="btn btn-lg btn-block btn-secondary" runat="server">Create Account</asp:LinkButton>
+
+                    <a class="btn btn-lg btn-block btn-light" onclick="showLandingMenu()">Cancel</a>
+
+                </div>
+            </div>
+
+            <div class="row" id="createArtistTitle">
+                <div class="col-md-2"></div>
+                <h1 class="homePageTitle" >Artist Registration</h1>
+            </div>
+            <div class="row" id="createArtistModule">
+
+                <div class="col-md-2"></div>
+                <div class="col-md-1">
+                    <br />
+                    <asp:Label ID="lblArtistFName" runat="server" Text="First Name:"></asp:Label>
+                    <br />
+                    <br />
+                    <asp:Label ID="lblArtistEmail" runat="server" Text="Email: "></asp:Label>
+                    <br />
+                    <br />
+                    <asp:Label ID="lblArtistPass" runat="server" Text="Password: "></asp:Label>
+                    <br />
+                    <br />
+                    <asp:Label ID="lblArtistCert" runat="server" Text="Certification: "></asp:Label>
+
+                </div>
+                <div class="col-md-3">
+                    <br />
+                    <asp:TextBox ID="txtArtistFName" runat="server"></asp:TextBox>
+                    <br />
+                    <br />
+                    <asp:TextBox ID="txtArtistEmail" runat="server"></asp:TextBox>
+                    <br />
+                    <br />
+                    <asp:TextBox ID="txtArtistPass" runat="server"></asp:TextBox>
+                    <br />
+                    <br />
+                    <asp:TextBox ID="txtArtistCert" runat="server"></asp:TextBox>
+
+                </div>
+
+                <div class="col-md-1">
+                    <br />
+                    <asp:Label ID="lblArtistLName" runat="server" Text="Last Name:"></asp:Label>
+                    <br />
+                    <br />
+                    <asp:Label ID="lblArtistPhone" runat="server" Text="Phone: "></asp:Label>
+                    <br />
+                    <br />
+                    <asp:Label ID="lblArtistConfirm" runat="server" Text="Confirm Password: "></asp:Label>
+                     <br />
+                    <br />
+                    <asp:Label ID="lblArtistCompany" runat="server" Text="Company: "></asp:Label>
+
+                </div>
+                <div class="col-md-3">
+                    <br />
+                    <asp:TextBox ID="txtArtistLName" runat="server"></asp:TextBox>
+                    <br />
+                    <br />
+                    <asp:TextBox ID="txtArtistPhone" runat="server"></asp:TextBox>
+                    <br />
+                    <br />
+                    <asp:TextBox ID="txtArtistConfirm" runat="server"></asp:TextBox>
+                    <br />
+                    <br />
+                    <asp:TextBox ID="txtArtistCompany" runat="server"></asp:TextBox>
+                    <br />
+                    <br />
+                    <asp:LinkButton ID="LinkButton1" class="btn btn-lg btn-block btn-secondary" runat="server">Create Account</asp:LinkButton>
 
                     <a class="btn btn-lg btn-block btn-light" onclick="showLandingMenu()">Cancel</a>
 

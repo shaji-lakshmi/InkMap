@@ -62,11 +62,11 @@ nav{
     background-color:white;
 }
 
-#createAccountTitle{
+#createAccountTitle, #createArtistTitle {
     display:none;
 }
 
-#createAccountModule {
+#createAccountModule,#createArtistModule {
     padding-bottom: 3%;
     padding-top: 3%;
     margin-left: 10%;
