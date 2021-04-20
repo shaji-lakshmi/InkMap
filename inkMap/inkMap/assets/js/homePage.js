@@ -18,6 +18,7 @@ function showLandingMenu() {
     createTitle.style.display = "none";
     createArtist.style.display = "none";
     createArtistHeading.style.display = "none";
+    
 }
 
 function showCustomerAccountModule() {
@@ -37,3 +38,4 @@ function showArtistAccountModule() {
     showTarget.style.display = "flex";
     showTargetHeading.style.display = "flex";
 }
+

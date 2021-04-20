@@ -22,6 +22,15 @@ namespace inkMap {
         protected global::System.Web.UI.HtmlControls.HtmlForm frmHomepage;
         
         /// <summary>
+        /// lblStoreName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblStoreName;
+        
+        /// <summary>
         /// lblEmail control.
         /// </summary>
         /// <remarks>
@@ -65,6 +74,24 @@ namespace inkMap {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lnkbtnforgotpass;
+        
+        /// <summary>
+        /// saveLogIn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton saveLogIn;
+        
+        /// <summary>
+        /// deleteLogIn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton deleteLogIn;
         
         /// <summary>
         /// lbtnSignIn control.

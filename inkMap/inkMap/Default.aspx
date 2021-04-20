@@ -35,6 +35,8 @@
                     <a class="btn btn-lg btn-block" id="signIn" onclick="showSignInContent()">Sign In</a>
                     <a class="btn btn-lg btn-block" id="createAccount" onclick="showCustomerAccountModule()">Create Account</a>
                     <a class="btn btn-lg btn-block" id="registerArtist" onclick="showArtistAccountModule()">Register As an Artist</a>
+                    <asp:Label ID="lblStoreName" runat="server" Text=""></asp:Label>
+
                 </div>
 
                 <div class="col-md-6" id="signInModule">
@@ -52,6 +54,10 @@
                         <br />
                         <br />
                         <asp:LinkButton ID="lnkbtnforgotpass" runat="server">Forgot Password</asp:LinkButton>
+                        <br />
+                        <asp:LinkButton id="saveLogIn" runat="server" onclick="saveLogIn_Click">Save Log In</asp:LinkButton>
+                        <br />
+                        <asp:LinkButton id="deleteLogIn" runat="server" onclick="deleteLogIn_Click">Delete Log In</asp:LinkButton>
 
                         <br />
                         <br />
@@ -60,6 +66,7 @@
                          <a class="btn btn-lg btn-light" onclick="showLandingMenu()">&nbsp;Cancel</a>
                     </div>
                 </div>
+
             </div>
 
             <div class="row" id="createAccountTitle">
