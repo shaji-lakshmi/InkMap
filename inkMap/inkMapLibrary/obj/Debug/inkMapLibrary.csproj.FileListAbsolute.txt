@@ -1,0 +1,6 @@
+C:\Users\Lakshmi\Desktop\InkMap\inkMap\inkMapLibrary\bin\Debug\inkMapLibrary.dll
+C:\Users\Lakshmi\Desktop\InkMap\inkMap\inkMapLibrary\bin\Debug\inkMapLibrary.pdb
+C:\Users\Lakshmi\Desktop\InkMap\inkMap\inkMapLibrary\obj\Debug\inkMapLibrary.csprojAssemblyReference.cache
+C:\Users\Lakshmi\Desktop\InkMap\inkMap\inkMapLibrary\obj\Debug\inkMapLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Lakshmi\Desktop\InkMap\inkMap\inkMapLibrary\obj\Debug\inkMapLibrary.dll
+C:\Users\Lakshmi\Desktop\InkMap\inkMap\inkMapLibrary\obj\Debug\inkMapLibrary.pdb
