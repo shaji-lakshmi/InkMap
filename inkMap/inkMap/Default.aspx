@@ -122,7 +122,7 @@
                     <asp:TextBox ID="txtConfirmPass" runat="server"></asp:TextBox>
                     <br />
                     <br />
-                    <asp:LinkButton ID="lbtnCreateAccountCustomer" class="btn btn-lg btn-block btn-secondary" runat="server">Create Account</asp:LinkButton>
+                    <asp:LinkButton ID="lbtnCreateAccountCustomer" class="btn btn-lg btn-block btn-secondary" runat="server" OnClick="lbtnCreateAccountCustomer_Click">Create Account</asp:LinkButton>
 
                     <a class="btn btn-lg btn-block btn-light" onclick="showLandingMenu()">Cancel</a>
 

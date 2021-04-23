@@ -143,17 +143,6 @@ namespace inkMap
             }
            
 
-            //if(stored > -1)
-            //{
-            //    Response.Redirect("Default.aspx");
-            //    lblStoreName.Text = "Your account has been created! Please sign in to confirm log in.";
-            //}
-            //else
-            //{
-            //    lblStoreName.Text = "Account not added";
-            //}
-
-
 
         }
 
