@@ -122,7 +122,7 @@
                     <asp:TextBox ID="txtConfirmPass" runat="server"></asp:TextBox>
                     <br />
                     <br />
-                    <asp:LinkButton ID="lbtnCreateAccount" class="btn btn-lg btn-block btn-secondary" runat="server">Create Account</asp:LinkButton>
+                    <asp:LinkButton ID="lbtnCreateAccountCustomer" class="btn btn-lg btn-block btn-secondary" runat="server">Create Account</asp:LinkButton>
 
                     <a class="btn btn-lg btn-block btn-light" onclick="showLandingMenu()">Cancel</a>
 
@@ -193,13 +193,14 @@
                     <asp:TextBox ID="txtArtistCompany" runat="server"></asp:TextBox>
                     <br />
                     <br />
-                    <asp:LinkButton ID="LinkButton1" class="btn btn-lg btn-block btn-secondary" runat="server">Create Account</asp:LinkButton>
+                    <asp:LinkButton ID="lbtnCreateAccountArtist" class="btn btn-lg btn-block btn-secondary" runat="server">Create Account</asp:LinkButton>
 
                     <a class="btn btn-lg btn-block btn-light" onclick="showLandingMenu()">Cancel</a>
 
                 </div>
             </div>
         </div>
+        
     </form>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

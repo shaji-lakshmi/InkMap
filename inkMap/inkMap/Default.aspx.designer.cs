@@ -211,13 +211,13 @@ namespace inkMap {
         protected global::System.Web.UI.WebControls.TextBox txtConfirmPass;
         
         /// <summary>
-        /// lbtnCreateAccount control.
+        /// lbtnCreateAccountCustomer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnCreateAccount;
+        protected global::System.Web.UI.WebControls.LinkButton lbtnCreateAccountCustomer;
         
         /// <summary>
         /// lblArtistFName control.
@@ -364,12 +364,12 @@ namespace inkMap {
         protected global::System.Web.UI.WebControls.TextBox txtArtistCompany;
         
         /// <summary>
-        /// LinkButton1 control.
+        /// lbtnCreateAccountArtist control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
+        protected global::System.Web.UI.WebControls.LinkButton lbtnCreateAccountArtist;
     }
 }

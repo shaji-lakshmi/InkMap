@@ -12547,11 +12547,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< Updated upstream
       "projectUniqueName": "C:\\Users\\mizuh\\Documents\\GitHub\\InkMap\\inkMap\\InkMapAPI\\InkMapAPI.csproj",
       "projectName": "InkMapAPI",
       "projectPath": "C:\\Users\\mizuh\\Documents\\GitHub\\InkMap\\inkMap\\InkMapAPI\\InkMapAPI.csproj",
       "packagesPath": "C:\\Users\\mizuh\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\mizuh\\Documents\\GitHub\\InkMap\\inkMap\\InkMapAPI\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\mizuh\\Documents\\Too Kool For Skool\\3342-ServerSide\\InkMap\\inkMap\\InkMapAPI\\InkMapAPI.csproj",
+      "projectName": "InkMapAPI",
+      "projectPath": "C:\\Users\\mizuh\\Documents\\Too Kool For Skool\\3342-ServerSide\\InkMap\\inkMap\\InkMapAPI\\InkMapAPI.csproj",
+      "packagesPath": "C:\\Users\\mizuh\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mizuh\\Documents\\Too Kool For Skool\\3342-ServerSide\\InkMap\\inkMap\\InkMapAPI\\obj\\",
+>>>>>>> Stashed changes
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

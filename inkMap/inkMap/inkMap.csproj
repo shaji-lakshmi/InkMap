@@ -75,8 +75,16 @@
     <Content Include="assets\js\homePage.js" />
     <Content Include="createProfile.aspx" />
     <Content Include="Default.aspx" />
+<<<<<<< Updated upstream
     <Content Include="profileImageGrab.aspx" />
     <Content Include="viewProfile.aspx" />
+=======
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\NewAccountService\NewAccount.disco" />
+>>>>>>> Stashed changes
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -102,16 +110,33 @@
       <DependentUpon>profileImageGrab.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< Updated upstream
     <Compile Include="viewProfile.aspx.cs">
       <DependentUpon>viewProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="viewProfile.aspx.designer.cs">
       <DependentUpon>viewProfile.aspx</DependentUpon>
+=======
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\NewAccountService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+>>>>>>> Stashed changes
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Web References\NewAccountService\NewAccount.wsdl" />
+    <None Include="Web References\NewAccountService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -120,10 +145,40 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< Updated upstream
     <ProjectReference Include="..\inkMapLibrary\inkMapLibrary.csproj">
       <Project>{44d176ba-87f2-4eba-b8bd-6e6e9dfb208e}</Project>
       <Name>inkMapLibrary</Name>
     </ProjectReference>
+=======
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InkMapLibrary\InkMapLibrary.csproj">
+      <Project>{88e89437-0107-4ad3-a37b-6025d292d61d}</Project>
+      <Name>InkMapLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SOAPInkMapWebService\SOAPInkMapWebService.csproj">
+      <Project>{7008b728-7510-4e2b-97cb-24becc8276e9}</Project>
+      <Name>SOAPInkMapWebService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:61120/NewAccount.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\NewAccountService\</RelPath>
+      <UpdateFromURL>http://localhost:61120/NewAccount.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>inkMap_NewAccountService_NewAccount</CachedSettingsPropName>
+    </WebReferenceUrl>
+>>>>>>> Stashed changes
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

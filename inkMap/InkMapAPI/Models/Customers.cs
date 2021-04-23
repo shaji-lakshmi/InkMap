@@ -10,21 +10,34 @@ namespace InkMapAPI.Models
         //public int Customer_ID;
         public String customer_FirstName;
         public String customer_LastName;
+<<<<<<< Updated upstream
         public String email;
         public String phoneNumber;
         //public int Account_ID;
 
         public String Customer_FirstName
+=======
+        public String cust_email;
+        public String cust_phoneNumber;
+        //public int Account_ID;
+
+        public String Cust_FirstName
+>>>>>>> Stashed changes
         {
             get { return customer_FirstName; }
             set { customer_FirstName = value; }
         }
 
+<<<<<<< Updated upstream
         public String Customer_LastName
+=======
+        public String Cust_LastName
+>>>>>>> Stashed changes
         {
             get { return customer_LastName; }
             set { customer_LastName = value; }
         }
+<<<<<<< Updated upstream
         public String Email
         {
             get { return email; }
@@ -34,6 +47,17 @@ namespace InkMapAPI.Models
         {
             get { return phoneNumber; }
             set { phoneNumber = value; }
+=======
+        public String Cust_Email
+        {
+            get { return cust_email; }
+            set { cust_email = value; }
+        }
+        public String Cust_PhoneNumber
+        {
+            get { return cust_phoneNumber; }
+            set { cust_phoneNumber = value; }
+>>>>>>> Stashed changes
         }
 
 
