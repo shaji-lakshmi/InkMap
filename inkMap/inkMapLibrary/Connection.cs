@@ -32,7 +32,11 @@ namespace Utilities
         // Note: The DataSet is also stored as a class variable for use in the GetField method
         public DataSet GetDataSet(String SqlSelect)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         {         
+=======
+        {
+>>>>>>> Stashed changes
 =======
         {
 >>>>>>> Stashed changes
@@ -135,7 +139,11 @@ namespace Utilities
             ds = myDataSet;
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             return myDataSet;          
+=======
+            return myDataSet;
+>>>>>>> Stashed changes
 =======
             return myDataSet;
 >>>>>>> Stashed changes

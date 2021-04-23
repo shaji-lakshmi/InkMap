@@ -13,7 +13,11 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "launchUrl": "api/values",
+=======
+      "launchUrl": "api/Customer",
+>>>>>>> Stashed changes
 =======
       "launchUrl": "api/Customer",
 >>>>>>> Stashed changes
@@ -25,7 +29,11 @@
       "commandName": "Project",
       "launchBrowser": true,
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "launchUrl": "api/values",
+=======
+      "launchUrl": "api/Customer",
+>>>>>>> Stashed changes
 =======
       "launchUrl": "api/Customer",
 >>>>>>> Stashed changes

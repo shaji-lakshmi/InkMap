@@ -76,14 +76,20 @@
     <Content Include="createProfile.aspx" />
     <Content Include="Default.aspx" />
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <Content Include="profileImageGrab.aspx" />
     <Content Include="viewProfile.aspx" />
 =======
+=======
+>>>>>>> Stashed changes
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Web References\NewAccountService\NewAccount.disco" />
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     <Content Include="Web.config" />
   </ItemGroup>
@@ -111,6 +117,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <Compile Include="viewProfile.aspx.cs">
       <DependentUpon>viewProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -118,6 +125,8 @@
     <Compile Include="viewProfile.aspx.designer.cs">
       <DependentUpon>viewProfile.aspx</DependentUpon>
 =======
+=======
+>>>>>>> Stashed changes
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -127,6 +136,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     </Compile>
   </ItemGroup>
@@ -146,11 +158,14 @@
   </ItemGroup>
   <ItemGroup>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <ProjectReference Include="..\inkMapLibrary\inkMapLibrary.csproj">
       <Project>{44d176ba-87f2-4eba-b8bd-6e6e9dfb208e}</Project>
       <Name>inkMapLibrary</Name>
     </ProjectReference>
 =======
+=======
+>>>>>>> Stashed changes
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
@@ -178,6 +193,9 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>inkMap_NewAccountService_NewAccount</CachedSettingsPropName>
     </WebReferenceUrl>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   </ItemGroup>
   <PropertyGroup>

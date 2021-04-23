@@ -10,6 +10,11 @@ using System.IO;                        // needed for the MemoryStream
 using System.Text;                      // needed for the UTF8 encoding
 using System.Net;                       // needed for the cookie
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+using InkMapLibrary;
+using System.Collections;
+>>>>>>> Stashed changes
 =======
 using InkMapLibrary;
 using System.Collections;
@@ -63,14 +68,20 @@ namespace inkMap
                 txtPass.Text = plainTextPassword;
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             }
 
 =======
+=======
+>>>>>>> Stashed changes
                 
 
                 
             }
             
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
         }
@@ -113,11 +124,18 @@ namespace inkMap
 
             lblStoreName.Text = "Username has been stored!";
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
 
         }
         protected void deleteLogIn_Click(object sender, EventArgs e)
         {
+<<<<<<< Updated upstream
             if (Request.Cookies["Login"] != null)
+=======
+           if(Request.Cookies["Login"] != null)
+>>>>>>> Stashed changes
             {
                 Response.Cookies["Login"].Expires = DateTime.Now.AddDays(-1);
             }
@@ -126,6 +144,7 @@ namespace inkMap
             txtEmail.Text = " ";
             txtPass.Text = " ";
         }
+<<<<<<< Updated upstream
 =======
 
         }
@@ -135,12 +154,52 @@ namespace inkMap
             {
                 Response.Cookies["Login"].Expires = DateTime.Now.AddDays(-1);
             }
+=======
+
+        protected void lbtnCreateAccountCustomer_Click(object sender, EventArgs e)
+        {
+            NewAccountService.Account AccountInfo = new NewAccountService.Account();
+
+            AccountInfo.password = txtConfirmPass.Text;
+            AccountInfo.accountType = "customer";
+            AccountInfo.firstName = txtCustomerFName.Text;
+            AccountInfo.lastName = txtCustomerLName.Text;
+            AccountInfo.email = txtCustomerEmail.Text;
+            AccountInfo.phoneNumber = txtCustomerPhone.Text;
+
+            NewAccountService.NewAccount proxy = new NewAccountService.NewAccount();
+
+           if(proxy.AddAccount(AccountInfo))
+            {
+                lblStoreName.Text = "Account was created successfully!";
+
+            }
+           else
+            {
+                lblStoreName.Text = "Account was not created D:";
+
+            }
+           
+
+            //if(stored > -1)
+            //{
+            //    Response.Redirect("Default.aspx");
+            //    lblStoreName.Text = "Your account has been created! Please sign in to confirm log in.";
+            //}
+            //else
+            //{
+            //    lblStoreName.Text = "Account not added";
+            //}
+
+
+>>>>>>> Stashed changes
 
             lblStoreName.Text = "Username has been deleted!";
             txtEmail.Text = " ";
             txtPass.Text = " ";
         }
 
+<<<<<<< Updated upstream
         protected void lbtnCreateAccountCustomer_Click(object sender, EventArgs e)
         {
             NewAccountService.Account AccountInfo = new NewAccountService.Account();
@@ -181,6 +240,8 @@ namespace inkMap
         }
 >>>>>>> Stashed changes
 
+=======
+>>>>>>> Stashed changes
 
     }
 }

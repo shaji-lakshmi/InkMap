@@ -4,7 +4,11 @@
     <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">C:\Users\mizuh\Documents\GitHub\InkMap\inkMap\InkMapAPI\obj\project.assets.json</ProjectAssetsFile>
+=======
+    <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">C:\Users\mizuh\Documents\Too Kool For Skool\3342-ServerSide\InkMap\inkMap\InkMapAPI\obj\project.assets.json</ProjectAssetsFile>
+>>>>>>> Stashed changes
 =======
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">C:\Users\mizuh\Documents\Too Kool For Skool\3342-ServerSide\InkMap\inkMap\InkMapAPI\obj\project.assets.json</ProjectAssetsFile>
 >>>>>>> Stashed changes

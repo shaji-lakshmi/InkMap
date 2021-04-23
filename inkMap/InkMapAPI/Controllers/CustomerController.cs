@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 namespace InkMapAPI.Controllers
 {
     [Route("api/[controller]")]
@@ -18,6 +19,8 @@ namespace InkMapAPI.Controllers
         {
             return new string[] { "value1", "value2" };
 =======
+=======
+>>>>>>> Stashed changes
 using Utilities;
 using System.Data;
 using InkMapAPI.Models;
@@ -46,6 +49,9 @@ namespace InkMapAPI.Controllers
                 CustomerList.Add(customer);
             }
             return CustomerList;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         }
 
