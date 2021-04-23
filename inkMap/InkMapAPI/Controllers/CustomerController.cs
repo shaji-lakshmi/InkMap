@@ -5,22 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-namespace InkMapAPI.Controllers
-{
-    [Route("api/[controller]")]
-    [ApiController]
-    public class CustomerController : ControllerBase
-    {
-        // GET: api/Customer
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-=======
-=======
->>>>>>> Stashed changes
 using Utilities;
 using System.Data;
 using InkMapAPI.Models;
@@ -49,10 +33,6 @@ namespace InkMapAPI.Controllers
                 CustomerList.Add(customer);
             }
             return CustomerList;
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
         }
 
         // GET: api/Customer/5

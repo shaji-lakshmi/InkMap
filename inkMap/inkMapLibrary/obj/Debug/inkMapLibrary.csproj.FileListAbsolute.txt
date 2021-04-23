@@ -1,20 +1,3 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-C:\Users\Lakshmi\Desktop\InkMap\inkMap\inkMapLibrary\bin\Debug\inkMapLibrary.dll
-C:\Users\Lakshmi\Desktop\InkMap\inkMap\inkMapLibrary\bin\Debug\inkMapLibrary.pdb
-C:\Users\Lakshmi\Desktop\InkMap\inkMap\inkMapLibrary\obj\Debug\inkMapLibrary.csprojAssemblyReference.cache
-C:\Users\Lakshmi\Desktop\InkMap\inkMap\inkMapLibrary\obj\Debug\inkMapLibrary.csproj.CoreCompileInputs.cache
-C:\Users\Lakshmi\Desktop\InkMap\inkMap\inkMapLibrary\obj\Debug\inkMapLibrary.dll
-C:\Users\Lakshmi\Desktop\InkMap\inkMap\inkMapLibrary\obj\Debug\inkMapLibrary.pdb
-C:\Users\mizuh\Documents\GitHub\InkMap\inkMap\inkMapLibrary\bin\Debug\inkMapLibrary.dll
-C:\Users\mizuh\Documents\GitHub\InkMap\inkMap\inkMapLibrary\bin\Debug\inkMapLibrary.pdb
-C:\Users\mizuh\Documents\GitHub\InkMap\inkMap\inkMapLibrary\obj\Debug\inkMapLibrary.csprojAssemblyReference.cache
-C:\Users\mizuh\Documents\GitHub\InkMap\inkMap\inkMapLibrary\obj\Debug\inkMapLibrary.csproj.CoreCompileInputs.cache
-C:\Users\mizuh\Documents\GitHub\InkMap\inkMap\inkMapLibrary\obj\Debug\inkMapLibrary.dll
-C:\Users\mizuh\Documents\GitHub\InkMap\inkMap\inkMapLibrary\obj\Debug\inkMapLibrary.pdb
-=======
-=======
->>>>>>> Stashed changes
 C:\Users\mizuh\Documents\Too Kool For Skool\3342-ServerSide\InkMap\inkMap\InkMapLibrary\bin\InkMapLibrary.dll.config
 C:\Users\mizuh\Documents\Too Kool For Skool\3342-ServerSide\InkMap\inkMap\InkMapLibrary\bin\InkMapLibrary.dll
 C:\Users\mizuh\Documents\Too Kool For Skool\3342-ServerSide\InkMap\inkMap\InkMapLibrary\bin\InkMapLibrary.pdb
@@ -70,7 +53,3 @@ C:\Users\mizuh\Documents\Too Kool For Skool\3342-ServerSide\InkMap\inkMap\InkMap
 C:\Users\mizuh\Documents\Too Kool For Skool\3342-ServerSide\InkMap\inkMap\InkMapLibrary\obj\Debug\InkMapLibrary.csproj.CopyComplete
 C:\Users\mizuh\Documents\Too Kool For Skool\3342-ServerSide\InkMap\inkMap\InkMapLibrary\obj\Debug\InkMapLibrary.dll
 C:\Users\mizuh\Documents\Too Kool For Skool\3342-ServerSide\InkMap\inkMap\InkMapLibrary\obj\Debug\InkMapLibrary.pdb
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
