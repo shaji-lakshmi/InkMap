@@ -74,3 +74,19 @@ nav{
     background-color: white;
     display: none;
 }
+
+#verificationNote{
+    padding:3%;
+    width:50%;
+    height: 350px;
+    background-color: white;
+    margin-top:15%;
+    margin-left:25%;
+}
+
+#lblVerificationInfo {
+    font-family: 'Brush Script MT';
+    font-size: 35px;
+    font-weight: bold;
+    color: dimgrey;
+}

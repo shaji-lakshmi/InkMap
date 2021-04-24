@@ -11,6 +11,9 @@ using System.Text;                      // needed for the UTF8 encoding
 using System.Net;                       // needed for the cookie
 using InkMapLibrary;
 using System.Collections;
+using System.Data;
+using System.Data.SqlClient;
+using Utilities;
 
 namespace inkMap
 {
@@ -18,6 +21,9 @@ namespace inkMap
     {
         private Byte[] key = { 250, 101, 18, 76, 45, 135, 207, 118, 4, 171, 3, 168, 202, 241, 37, 199 };
         private Byte[] vector = { 146, 64, 191, 111, 23, 3, 113, 119, 231, 121, 252, 112, 79, 32, 114, 156 };
+
+        DBConnect objDB = new DBConnect();
+        dbProcedures procedure = new dbProcedures();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -133,7 +139,17 @@ namespace inkMap
 
            if(proxy.AddAccount(AccountInfo))
             {
-                lblStoreName.Text = "Account was created successfully!";
+                DataSet userData = procedure.getaccountidfromemail(txtCustomerEmail.Text);
+                Email verificationEmail = new Email();
+                string receiveremail = txtCustomerEmail.Text;
+                string senderEmail = "verify@inkmap.com";
+                string subject = "Verify your account";
+                int account = int.Parse(userData.Tables[0].Rows[0]["Account_ID"].ToString());
+
+                string body = "Please refer to this URL to confirm your account creation. http://localhost:63822/verification.aspx?ID="+account;
+                verificationEmail.SendMail(receiveremail, senderEmail, subject, body);
+                
+                lblStoreName.Text = "Account was created successfully! Please check your email for verification Email.";
 
             }
            else

@@ -116,3 +116,9 @@ C:\Users\mizuh\Documents\Too Kool For Skool\3342-ServerSide\InkMap\inkMap\inkMap
 C:\Users\mizuh\Documents\Too Kool For Skool\3342-ServerSide\InkMap\inkMap\inkMap\bin\InkMapLibrary.dll.config
 C:\Users\mizuh\Documents\Too Kool For Skool\3342-ServerSide\InkMap\inkMap\inkMap\bin\SOAPInkMapWebService.pdb
 C:\Users\mizuh\Documents\Too Kool For Skool\3342-ServerSide\InkMap\inkMap\inkMap\bin\SOAPInkMapWebService.dll.config
+C:\Users\Lakshmi\Desktop\InkMap\inkMap\inkMap\bin\InkMapLibrary.dll
+C:\Users\Lakshmi\Desktop\InkMap\inkMap\inkMap\bin\SOAPInkMapWebService.dll
+C:\Users\Lakshmi\Desktop\InkMap\inkMap\inkMap\bin\InkMapLibrary.pdb
+C:\Users\Lakshmi\Desktop\InkMap\inkMap\inkMap\bin\InkMapLibrary.dll.config
+C:\Users\Lakshmi\Desktop\InkMap\inkMap\inkMap\bin\SOAPInkMapWebService.pdb
+C:\Users\Lakshmi\Desktop\InkMap\inkMap\inkMap\bin\SOAPInkMapWebService.dll.config
