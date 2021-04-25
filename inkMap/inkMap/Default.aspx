@@ -78,10 +78,10 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-1">
                     <br />
-                    <asp:Label ID="lblCutomerFName" runat="server" Text="First Name:"></asp:Label>
+                    <asp:Label ID="lblCutomerFName" runat="server" Text="First Name:" ></asp:Label>
                     <br />
                     <br />
-                    <asp:Label ID="lblCustomerEmail" runat="server" Text="Email: "></asp:Label>
+                    <asp:Label ID="lblCustomerEmail" runat="server" Text="Email: " ></asp:Label>
                     <br />
                     <br />
                     <asp:Label ID="lblCustomerPassword" runat="server" Text="Password: "></asp:Label>
@@ -89,20 +89,20 @@
                 </div>
                 <div class="col-md-3">
                     <br />
-                    <asp:TextBox ID="txtCustomerFName" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtCustomerFName" runat="server" TabIndex="1"></asp:TextBox>
                     <br />
                     <br />
-                    <asp:TextBox ID="txtCustomerEmail" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtCustomerEmail" runat="server" TabIndex="3"></asp:TextBox>
                     <br />
                     <br />
-                    <asp:TextBox ID="txtCustomerPassword" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtCustomerPassword" runat="server" TabIndex="5"></asp:TextBox>
 
 
                 </div>
 
                 <div class="col-md-1">
                     <br />
-                    <asp:Label ID="lblCustomerLName" runat="server" Text="Last Name:"></asp:Label>
+                    <asp:Label ID="lblCustomerLName" runat="server" Text="Last Name:" ></asp:Label>
                     <br />
                     <br />
                     <asp:Label ID="lblCustomerPhone" runat="server" Text="Phone: "></asp:Label>
@@ -113,13 +113,13 @@
                 </div>
                 <div class="col-md-3">
                     <br />
-                    <asp:TextBox ID="txtCustomerLName" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtCustomerLName" runat="server" TabIndex="2"></asp:TextBox>
                     <br />
                     <br />
-                    <asp:TextBox ID="txtCustomerPhone" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtCustomerPhone" runat="server" TabIndex="4"></asp:TextBox>
                     <br />
                     <br />
-                    <asp:TextBox ID="txtConfirmPass" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtConfirmPass" runat="server" TabIndex="6"></asp:TextBox>
                     <br />
                     <br />
                     <asp:LinkButton ID="lbtnCreateAccountCustomer" class="btn btn-lg btn-block btn-secondary" runat="server" OnClick="lbtnCreateAccountCustomer_Click">Create Account</asp:LinkButton>
@@ -161,25 +161,25 @@
                 </div>
                 <div class="col-md-3">
                     <br />
-                    <asp:TextBox ID="txtArtistFName" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtArtistFName" runat="server" TabIndex="7"></asp:TextBox>
                     <br />
                     <br />
-                    <asp:TextBox ID="txtArtistEmail" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtArtistEmail" runat="server" TabIndex="9"></asp:TextBox>
                     <br />
                     <br />
-                    <asp:TextBox ID="txtArtistPass" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtArtistPass" runat="server" TabIndex="11"></asp:TextBox>
                     <br />
                     <br />
-                    <asp:TextBox ID="txtArtistCert" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtArtistCert" runat="server" TabIndex="13"></asp:TextBox>
                     <br />
                     <br />
-                    <asp:TextBox ID="txtArtistStreetAddress" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtArtistStreetAddress" runat="server" TabIndex="15"></asp:TextBox>
                     <br />
                     <br />
-                    <asp:TextBox ID="txtArtistCity" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtArtistCity" runat="server" TabIndex="17"></asp:TextBox>
                     <br />
                     <br />
-                    <asp:TextBox ID="txtArtistZipcode" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtArtistZipcode" runat="server" TabIndex="19"></asp:TextBox>
 
                 </div>
 
@@ -205,22 +205,22 @@
                 </div>
                 <div class="col-md-3">
                     <br />
-                    <asp:TextBox ID="txtArtistLName" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtArtistLName" runat="server" TabIndex="8"></asp:TextBox>
                     <br />
                     <br />
-                    <asp:TextBox ID="txtArtistPhone" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtArtistPhone" runat="server" TabIndex="10"></asp:TextBox>
                     <br />
                     <br />
-                    <asp:TextBox ID="txtArtistConfirm" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtArtistConfirm" runat="server" TabIndex="12"></asp:TextBox>
                     <br />
                     <br />
-                    <asp:TextBox ID="txtArtistCompany" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtArtistCompany" runat="server" TabIndex="14"></asp:TextBox>
                     <br />
                     <br />
-                    <asp:TextBox ID="txtArtistAddress2" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtArtistAddress2" runat="server" TabIndex="16"></asp:TextBox>
                     <br />
                     <br />
-                    <asp:TextBox ID="txtArtistState" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtArtistState" runat="server" TabIndex="17"></asp:TextBox>
                     <br />
                     <br />
                     <asp:LinkButton ID="lbtnCreateAccountArtist" class="btn btn-lg btn-block btn-secondary" runat="server" OnClick="lbtnCreateAccountArtist_Click">Create Account</asp:LinkButton>

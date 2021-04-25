@@ -97,7 +97,36 @@ namespace InkMapLibrary
             return responseData;
         }
 
+        public int updateProfileImage(int accountid, string title, string type, byte [] data, int length)
+        {
+            SqlCommand procedure = new SqlCommand();
+            procedure.CommandType = CommandType.StoredProcedure;
+            procedure.CommandText = "TP_UploadProfilePic";
 
+            SqlParameter account = new SqlParameter("@accountid", accountid);
+            account.Direction = ParameterDirection.Input;
+            procedure.Parameters.Add(account);
+
+            SqlParameter imgtitle = new SqlParameter("@title", title);
+            imgtitle.Direction = ParameterDirection.Input;
+            procedure.Parameters.Add(imgtitle);
+
+            SqlParameter imgtype = new SqlParameter("@type", type);
+            imgtype.Direction = ParameterDirection.Input;
+            procedure.Parameters.Add(imgtype);
+
+            SqlParameter imgdata = new SqlParameter("@data", data);
+            imgdata.Direction = ParameterDirection.Input;
+            procedure.Parameters.Add(imgdata);
+
+            SqlParameter imglength = new SqlParameter("@length", length);
+            imglength.Direction = ParameterDirection.Input;
+            procedure.Parameters.Add(imglength);
+
+
+            int response = dBConnect.DoUpdateUsingCmdObj(procedure);
+            return response;
+        }
 
     }
 }

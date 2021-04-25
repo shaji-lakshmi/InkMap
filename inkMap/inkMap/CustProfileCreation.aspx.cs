@@ -37,5 +37,38 @@ namespace inkMap
             }
 
         }
+
+        protected void lbtnEnterSite_Click(object sender, EventArgs e)
+        {
+            int accountid = int.Parse(Request.QueryString["ID"]);
+            int imageSize;
+            string fileExtension;
+            string imgType;
+            string imgName; 
+            
+            try
+            {
+                if (uploadProfilePic.HasFile)
+                {
+                    imageSize = uploadProfilePic.PostedFile.ContentLength;
+                    byte[] imageData = new byte[imageSize];
+
+                    uploadProfilePic.PostedFile.InputStream.Read(imageData, 0, imageSize);
+                    imgName = uploadProfilePic.PostedFile.FileName;
+                    imgType = uploadProfilePic.PostedFile.ContentType;
+
+                    fileExtension = imgName.Substring(imgName.LastIndexOf("."));
+                    fileExtension = fileExtension.ToLower(); 
+
+                    if(fileExtension ==".jpg" || fileExtension ==".jpeg" || fileExtension == ".png")
+                    {
+                        int updateDB = procedure.updateProfileImage(accountid, imgName, imgType, imageData, imageData.Length);
+                    }
+
+                }
+            }catch{
+
+            }
+        }
     }
 }

@@ -68,7 +68,7 @@
             <div class="row">
                 <div class="col-md-9"></div>
                 <div class="col-md-3">
-                   <asp:LinkButton ID="lbtnEnterSite" class="btn btn-lg btn-block btnredirect" runat="server" Text="Get Started"></asp:LinkButton>
+                   <asp:LinkButton ID="lbtnEnterSite" class="btn btn-lg btn-block btnredirect" runat="server" Text="Get Started" OnClick="lbtnEnterSite_Click"></asp:LinkButton>
 
                 </div>
             </div>
