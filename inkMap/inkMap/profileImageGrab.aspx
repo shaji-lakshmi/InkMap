@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="profileImageGrab.aspx.cs" Inherits="inkMap.profileImageGrab" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="profileimagegrab.aspx.cs" Inherits="inkMap.profileimagegrab" %>
 
 <!DOCTYPE html>
 

@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace inkMap
-{
-
-
-    public partial class profileImageGrab
-    {
-
+namespace inkMap {
+    
+    
+    public partial class profileimagegrab {
+        
         /// <summary>
         /// form1 control.
         /// </summary>

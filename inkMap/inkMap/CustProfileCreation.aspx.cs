@@ -64,8 +64,15 @@ namespace inkMap
                     {
                         int updateDB = procedure.updateProfileImage(accountid, imgName, imgType, imageData, imageData.Length);
                     }
+                    else
+                    {
+                        Response.Write("<script>alert('This site does not accept the file type you uploaded. Please submit a .jpg, .jpeg or .png file.')</script>");
+
+                    }
+
 
                 }
+                Response.Redirect("CustomerLandingPage.aspx?ID=" + accountid);
             }catch{
 
             }

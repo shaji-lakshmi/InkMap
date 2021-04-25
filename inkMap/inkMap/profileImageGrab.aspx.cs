@@ -7,33 +7,35 @@ using System.Web.UI.WebControls;
 
 using Utilities;
 using System.Data;
-
-
+using System.Collections;
+using System.Data.SqlClient;
+using InkMapLibrary;
 
 namespace inkMap
 {
-    public partial class profileImageGrab : System.Web.UI.Page
-    {
+	public partial class profileimagegrab : System.Web.UI.Page
+	{
+
+        DBConnect objDB = new DBConnect();
+        dbProcedures procedure = new dbProcedures();
         protected void Page_Load(object sender, EventArgs e)
-        {
-            DBConnect objDB = new DBConnect();
-            DataSet ds;
-            string strSQL;
+		{
+            if(Request.QueryString["ID"] != null) {
+            int accountid = int.Parse(Request.QueryString["ID"]);
+            DataSet userImage = procedure.getprofileimage(accountid); 
 
-            // Get the image from the Image table using GET parameter supplied through the URL
-
-            strSQL = "SELECT ImageData FROM TP_profileImages Where Account_ID = 2";
-
-            ds = objDB.GetDataSet(strSQL);
-            byte[] imageData;
-
-            imageData = (byte[])objDB.GetField("ImageData", 0);
-            // Write the binary image data in the Response for the browser to display
+            byte[] imgData = (byte[])userImage.Tables[0].Rows[0]["ImageData"];
 
             Response.Clear();
-            Response.OutputStream.Write(imageData, 0, imageData.Length);
+            Response.OutputStream.Write(imgData, 0, imgData.Length);
+            //Response.BinaryWrite(imageData);
 
             Response.End();
+            }
+            else
+            {
+                Response.Write("<script>alert('You are trying to access an admin page. Please visit inkmap.com to get started')</script>");
+            }
         }
     }
 }

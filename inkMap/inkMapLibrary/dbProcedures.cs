@@ -27,20 +27,6 @@ namespace InkMapLibrary
             return responseData;
         }
 
-        public int updateAccountVerification(int accountid)
-        {
-            SqlCommand procedure = new SqlCommand();
-            procedure.CommandType = CommandType.StoredProcedure;
-            procedure.CommandText = "TP_updateVerificationCode";
-
-            SqlParameter verificationValue = new SqlParameter("@accountid", accountid);
-            verificationValue.Direction = ParameterDirection.Input;
-            procedure.Parameters.Add(verificationValue);
-
-            int response = dBConnect.DoUpdateUsingCmdObj(procedure);
-            return response;
-        }
-
         public DataSet getaccountidfromemail(string email)
         {
             SqlCommand procedure = new SqlCommand();
@@ -97,6 +83,21 @@ namespace InkMapLibrary
             return responseData;
         }
 
+        public DataSet getprofileimage(int accountid)
+        {
+            SqlCommand procedure = new SqlCommand();
+            procedure.CommandType = CommandType.StoredProcedure;
+            procedure.CommandText = "TP_getprofileimage";
+
+            SqlParameter accountInfo = new SqlParameter("@accountID", accountid);
+            accountInfo.Direction = ParameterDirection.Input;
+            procedure.Parameters.Add(accountInfo);
+
+            DataSet responseData = dBConnect.GetDataSetUsingCmdObj(procedure);
+            return responseData;
+        }
+
+
         public int updateProfileImage(int accountid, string title, string type, byte [] data, int length)
         {
             SqlCommand procedure = new SqlCommand();
@@ -128,5 +129,18 @@ namespace InkMapLibrary
             return response;
         }
 
+        public int updateAccountVerification(int accountid)
+        {
+            SqlCommand procedure = new SqlCommand();
+            procedure.CommandType = CommandType.StoredProcedure;
+            procedure.CommandText = "TP_updateVerificationCode";
+
+            SqlParameter verificationValue = new SqlParameter("@accountid", accountid);
+            verificationValue.Direction = ParameterDirection.Input;
+            procedure.Parameters.Add(verificationValue);
+
+            int response = dBConnect.DoUpdateUsingCmdObj(procedure);
+            return response;
+        }
     }
 }
