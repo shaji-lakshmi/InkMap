@@ -22,33 +22,39 @@ namespace InkMapLibrary
 
 
 
-        public void SendMail(String recipient, String sender, String subject, String body, String cc = "", String bcc = ""){
-            try{
+        public void SendMail(String recipient, String sender, String subject, String body, String cc = "", String bcc = "")
+        {
+            try
+            {
                 this.Recipient = recipient;
                 this.Sender = sender;
                 this.Subject = subject;
                 this.Message = body;
-                
+
                 objMail.To.Add(this.toAddress);
                 objMail.From = this.fromAddress;
                 objMail.Subject = this.subject;
                 objMail.Body = this.messageBody;
                 objMail.IsBodyHtml = this.isHTMLBody;
                 objMail.Priority = this.priority;
-                
-                if (cc != null && !cc.Equals(String.Empty)){
+
+                if (cc != null && !cc.Equals(String.Empty))
+                {
                     this.CCAddress = cc;
                     objMail.CC.Add(this.ccAddress);
                 }
-                
-                if (bcc != null && !bcc.Equals(String.Empty)){
+
+                if (bcc != null && !bcc.Equals(String.Empty))
+                {
                     this.BCCAddress = bcc;
                     objMail.Bcc.Add(this.bccAddress);
                 }
 
                 SmtpClient smtpMailClient = new SmtpClient(this.mailHost);
                 smtpMailClient.Send(objMail);
-            }catch (Exception ex){
+            }
+            catch (Exception ex)
+            {
                 throw ex;
             }
 
@@ -56,8 +62,10 @@ namespace InkMapLibrary
 
 
 
-        public Boolean SendMail(){
-            try{
+        public Boolean SendMail()
+        {
+            try
+            {
 
                 objMail.To.Add(this.toAddress);
                 objMail.From = this.fromAddress;
@@ -65,18 +73,20 @@ namespace InkMapLibrary
                 objMail.Body = this.messageBody;
                 objMail.IsBodyHtml = this.isHTMLBody;
                 objMail.Priority = this.priority;
-                
+
                 if (!ccAddress.Equals(String.Empty))
                     objMail.CC.Add(this.ccAddress);
-                
+
                 if (!bccAddress.Equals(String.Empty))
                     objMail.Bcc.Add(this.bccAddress);
-                
+
                 SmtpClient smtpMailClient = new SmtpClient(this.mailHost);
                 smtpMailClient.Send(objMail);
-                
+
                 return true;
-            }catch (Exception ex){
+            }
+            catch (Exception ex)
+            {
                 throw ex;
                 return false;
 
@@ -98,28 +108,32 @@ namespace InkMapLibrary
 
 
 
-        public String Sender{
+        public String Sender
+        {
             get { return this.fromAddress.ToString(); }
             set { this.fromAddress = new MailAddress(value); }
         }
 
 
 
-        public String CCAddress{
+        public String CCAddress
+        {
 
             get { return this.ccAddress.ToString(); }
             set { this.ccAddress = new MailAddress(value); }
 
         }
 
-        public String BCCAddress{
+        public String BCCAddress
+        {
 
             get { return this.bccAddress.ToString(); }
             set { this.bccAddress = new MailAddress(value); }
 
         }
-        
-        public String Subject{
+
+        public String Subject
+        {
 
             get { return this.subject; }
             set { this.subject = value; }
@@ -128,7 +142,8 @@ namespace InkMapLibrary
 
 
 
-        public String Message{
+        public String Message
+        {
 
             get { return this.messageBody; }
             set { this.messageBody = value; }
@@ -137,7 +152,8 @@ namespace InkMapLibrary
 
 
 
-        public Boolean HTMLBody{
+        public Boolean HTMLBody
+        {
 
             get { return this.isHTMLBody; }
             set { this.isHTMLBody = value; }
@@ -146,7 +162,8 @@ namespace InkMapLibrary
 
 
 
-        public MailPriority Priority{
+        public MailPriority Priority
+        {
 
             get { return this.priority; }
             set { this.priority = value; }
@@ -155,7 +172,8 @@ namespace InkMapLibrary
 
 
 
-        public String MailHost {
+        public String MailHost
+        {
 
             get { return this.mailHost; }
             set { this.mailHost = value; }

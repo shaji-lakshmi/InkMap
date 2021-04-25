@@ -21,7 +21,8 @@ namespace inkMap
             DBConnect objDB = new DBConnect();
             dbProcedures procedure = new dbProcedures();
 
-            if (Request.QueryString["ID"] != null){
+            if (Request.QueryString["ID"] != null)
+            {
 
                 int accountid = int.Parse(Request.QueryString["ID"]);
                 DataSet userData = procedure.getVerificationInformation(accountid);
@@ -30,18 +31,19 @@ namespace inkMap
                 // strSQL = "SELECT FirstName, LastName FROM TP_Account Where Account_ID = " + Request.QueryString["ID"];
                 // ds = objDB.GetDataSet(strSQL);
 
-                if(updateStatus == 1) { 
-                string fName = userData.Tables[0].Rows[0]["FirstName"].ToString();
-                string lName = userData.Tables[0].Rows[0]["LastName"].ToString();
-                string accountName = fName + " " + lName;
-                lblVerificationInfo.Text = accountName;
+                if (updateStatus == 1)
+                {
+                    string fName = userData.Tables[0].Rows[0]["FirstName"].ToString();
+                    string lName = userData.Tables[0].Rows[0]["LastName"].ToString();
+                    string accountName = fName + " " + lName;
+                    lblVerificationInfo.Text = accountName;
                 }
                 else
                 {
                     Response.Write("<script>alert('Something went wrong with your verification. Please contact system admins.')</script>");
 
                 }
-               
+
             }
         }
     }

@@ -148,6 +148,15 @@
                     <br />
                     <br />
                     <asp:Label ID="lblArtistCert" runat="server" Text="Certification: "></asp:Label>
+                    <br />
+                    <br />
+                    <asp:Label ID="lblArtistStreetAddress" runat="server" Text="Street Address: "></asp:Label>
+                    <br />
+                    <br />
+                    <asp:Label ID="lblArtistCity" runat="server" Text="City: "></asp:Label>
+                    <br />
+                    <br />
+                    <asp:Label ID="lblArtistZipcode" runat="server" Text="Zip code: "></asp:Label>
 
                 </div>
                 <div class="col-md-3">
@@ -162,10 +171,19 @@
                     <br />
                     <br />
                     <asp:TextBox ID="txtArtistCert" runat="server"></asp:TextBox>
+                    <br />
+                    <br />
+                    <asp:TextBox ID="txtArtistStreetAddress" runat="server"></asp:TextBox>
+                    <br />
+                    <br />
+                    <asp:TextBox ID="txtArtistCity" runat="server"></asp:TextBox>
+                    <br />
+                    <br />
+                    <asp:TextBox ID="txtArtistZipcode" runat="server"></asp:TextBox>
 
                 </div>
 
-                <div class="col-md-1">
+                <div class="col-md-2">
                     <br />
                     <asp:Label ID="lblArtistLName" runat="server" Text="Last Name:"></asp:Label>
                     <br />
@@ -174,9 +192,15 @@
                     <br />
                     <br />
                     <asp:Label ID="lblArtistConfirm" runat="server" Text="Confirm Password: "></asp:Label>
-                     <br />
+                    <br />
                     <br />
                     <asp:Label ID="lblArtistCompany" runat="server" Text="Company: "></asp:Label>
+                    <br />
+                    <br />
+                    <asp:Label ID="lblAddress2" runat="server" Text="Address 2: "></asp:Label>
+                    <br />
+                    <br />
+                    <asp:Label ID="lblArtistState" runat="server" Text="State: "></asp:Label>
 
                 </div>
                 <div class="col-md-3">
@@ -193,7 +217,13 @@
                     <asp:TextBox ID="txtArtistCompany" runat="server"></asp:TextBox>
                     <br />
                     <br />
-                    <asp:LinkButton ID="lbtnCreateAccountArtist" class="btn btn-lg btn-block btn-secondary" runat="server">Create Account</asp:LinkButton>
+                    <asp:TextBox ID="txtArtistAddress2" runat="server"></asp:TextBox>
+                    <br />
+                    <br />
+                    <asp:TextBox ID="txtArtistState" runat="server"></asp:TextBox>
+                    <br />
+                    <br />
+                    <asp:LinkButton ID="lbtnCreateAccountArtist" class="btn btn-lg btn-block btn-secondary" runat="server" OnClick="lbtnCreateAccountArtist_Click">Create Account</asp:LinkButton>
 
                     <a class="btn btn-lg btn-block btn-light" onclick="showLandingMenu()">Cancel</a>
 

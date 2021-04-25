@@ -31,6 +31,10 @@ namespace inkMap.NewAccountService {
         
         private System.Threading.SendOrPostCallback AddAccountOperationCompleted;
         
+        private System.Threading.SendOrPostCallback AddArtistOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback AddCustomerOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -73,6 +77,12 @@ namespace inkMap.NewAccountService {
         public event AddAccountCompletedEventHandler AddAccountCompleted;
         
         /// <remarks/>
+        public event AddArtistCompletedEventHandler AddArtistCompleted;
+        
+        /// <remarks/>
+        public event AddCustomerCompletedEventHandler AddCustomerCompleted;
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/AddAccount", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public bool AddAccount(Account newAccount) {
             object[] results = this.Invoke("AddAccount", new object[] {
@@ -98,6 +108,64 @@ namespace inkMap.NewAccountService {
             if ((this.AddAccountCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.AddAccountCompleted(this, new AddAccountCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/AddArtist", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool AddArtist(Artist art) {
+            object[] results = this.Invoke("AddArtist", new object[] {
+                        art});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void AddArtistAsync(Artist art) {
+            this.AddArtistAsync(art, null);
+        }
+        
+        /// <remarks/>
+        public void AddArtistAsync(Artist art, object userState) {
+            if ((this.AddArtistOperationCompleted == null)) {
+                this.AddArtistOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAddArtistOperationCompleted);
+            }
+            this.InvokeAsync("AddArtist", new object[] {
+                        art}, this.AddArtistOperationCompleted, userState);
+        }
+        
+        private void OnAddArtistOperationCompleted(object arg) {
+            if ((this.AddArtistCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.AddArtistCompleted(this, new AddArtistCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/AddCustomer", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool AddCustomer(Account customer) {
+            object[] results = this.Invoke("AddCustomer", new object[] {
+                        customer});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void AddCustomerAsync(Account customer) {
+            this.AddCustomerAsync(customer, null);
+        }
+        
+        /// <remarks/>
+        public void AddCustomerAsync(Account customer, object userState) {
+            if ((this.AddCustomerOperationCompleted == null)) {
+                this.AddCustomerOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAddCustomerOperationCompleted);
+            }
+            this.InvokeAsync("AddCustomer", new object[] {
+                        customer}, this.AddCustomerOperationCompleted, userState);
+        }
+        
+        private void OnAddCustomerOperationCompleted(object arg) {
+            if ((this.AddCustomerCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.AddCustomerCompleted(this, new AddCustomerCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -274,6 +342,303 @@ namespace inkMap.NewAccountService {
     }
     
     /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class Artist {
+        
+        private string artist_FNameField;
+        
+        private string artist_LNameField;
+        
+        private string emailField;
+        
+        private string phoneNumberField;
+        
+        private string companyField;
+        
+        private decimal ratingField;
+        
+        private string certificationField;
+        
+        private string cityField;
+        
+        private string stateField;
+        
+        private string zipcodeField;
+        
+        private string streetAddressField;
+        
+        private string address2Field;
+        
+        private string artist_FNameField1;
+        
+        private string artist_LNameField1;
+        
+        private string emailField1;
+        
+        private string phoneNumberField1;
+        
+        private string companyField1;
+        
+        private decimal ratingField1;
+        
+        private string certificationField1;
+        
+        private string cityField1;
+        
+        private string stateField1;
+        
+        private string zipcodeField1;
+        
+        private string streetAddressField1;
+        
+        private string address2Field1;
+        
+        /// <remarks/>
+        public string artist_FName {
+            get {
+                return this.artist_FNameField;
+            }
+            set {
+                this.artist_FNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string artist_LName {
+            get {
+                return this.artist_LNameField;
+            }
+            set {
+                this.artist_LNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string email {
+            get {
+                return this.emailField;
+            }
+            set {
+                this.emailField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string phoneNumber {
+            get {
+                return this.phoneNumberField;
+            }
+            set {
+                this.phoneNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string company {
+            get {
+                return this.companyField;
+            }
+            set {
+                this.companyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public decimal rating {
+            get {
+                return this.ratingField;
+            }
+            set {
+                this.ratingField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string certification {
+            get {
+                return this.certificationField;
+            }
+            set {
+                this.certificationField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string city {
+            get {
+                return this.cityField;
+            }
+            set {
+                this.cityField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string state {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string zipcode {
+            get {
+                return this.zipcodeField;
+            }
+            set {
+                this.zipcodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string streetAddress {
+            get {
+                return this.streetAddressField;
+            }
+            set {
+                this.streetAddressField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string address2 {
+            get {
+                return this.address2Field;
+            }
+            set {
+                this.address2Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Artist_FName {
+            get {
+                return this.artist_FNameField1;
+            }
+            set {
+                this.artist_FNameField1 = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Artist_LName {
+            get {
+                return this.artist_LNameField1;
+            }
+            set {
+                this.artist_LNameField1 = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Email {
+            get {
+                return this.emailField1;
+            }
+            set {
+                this.emailField1 = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PhoneNumber {
+            get {
+                return this.phoneNumberField1;
+            }
+            set {
+                this.phoneNumberField1 = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Company {
+            get {
+                return this.companyField1;
+            }
+            set {
+                this.companyField1 = value;
+            }
+        }
+        
+        /// <remarks/>
+        public decimal Rating {
+            get {
+                return this.ratingField1;
+            }
+            set {
+                this.ratingField1 = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Certification {
+            get {
+                return this.certificationField1;
+            }
+            set {
+                this.certificationField1 = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string City {
+            get {
+                return this.cityField1;
+            }
+            set {
+                this.cityField1 = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string State {
+            get {
+                return this.stateField1;
+            }
+            set {
+                this.stateField1 = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Zipcode {
+            get {
+                return this.zipcodeField1;
+            }
+            set {
+                this.zipcodeField1 = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string StreetAddress {
+            get {
+                return this.streetAddressField1;
+            }
+            set {
+                this.streetAddressField1 = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Address2 {
+            get {
+                return this.address2Field1;
+            }
+            set {
+                this.address2Field1 = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void AddAccountCompletedEventHandler(object sender, AddAccountCompletedEventArgs e);
     
@@ -286,6 +651,58 @@ namespace inkMap.NewAccountService {
         private object[] results;
         
         internal AddAccountCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void AddArtistCompletedEventHandler(object sender, AddArtistCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class AddArtistCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal AddArtistCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void AddCustomerCompletedEventHandler(object sender, AddCustomerCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class AddCustomerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal AddCustomerCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

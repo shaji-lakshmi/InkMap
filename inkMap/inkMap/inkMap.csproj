@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ArtistSearch.aspx" />
     <Content Include="assets\css\global.css" />
     <Content Include="assets\images\background1.jpg" />
     <Content Include="assets\images\background2.jpg" />
@@ -74,17 +75,23 @@
     <Content Include="assets\images\background4.jpg" />
     <Content Include="assets\js\homePage.js" />
     <Content Include="Default.aspx" />
-    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Web References\NewAccountService\NewAccount.disco" />
     <Content Include="NavigationBar.ascx" />
+    <None Include="Web References\NewAccountService\NewAccount.disco" />
     <Content Include="verification.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArtistSearch.aspx.cs">
+      <DependentUpon>ArtistSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArtistSearch.aspx.designer.cs">
+      <DependentUpon>ArtistSearch.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -121,10 +128,10 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Web References\NewAccountService\NewAccount.wsdl" />
-    <None Include="Web References\NewAccountService\Reference.map">
+    <Content Include="Web References\NewAccountService\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

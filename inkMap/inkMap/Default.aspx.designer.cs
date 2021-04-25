@@ -256,6 +256,33 @@ namespace inkMap {
         protected global::System.Web.UI.WebControls.Label lblArtistCert;
         
         /// <summary>
+        /// lblArtistStreetAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblArtistStreetAddress;
+        
+        /// <summary>
+        /// lblArtistCity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblArtistCity;
+        
+        /// <summary>
+        /// lblArtistZipcode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblArtistZipcode;
+        
+        /// <summary>
         /// txtArtistFName control.
         /// </summary>
         /// <remarks>
@@ -290,6 +317,33 @@ namespace inkMap {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtArtistCert;
+        
+        /// <summary>
+        /// txtArtistStreetAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtArtistStreetAddress;
+        
+        /// <summary>
+        /// txtArtistCity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtArtistCity;
+        
+        /// <summary>
+        /// txtArtistZipcode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtArtistZipcode;
         
         /// <summary>
         /// lblArtistLName control.
@@ -328,6 +382,24 @@ namespace inkMap {
         protected global::System.Web.UI.WebControls.Label lblArtistCompany;
         
         /// <summary>
+        /// lblAddress2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAddress2;
+        
+        /// <summary>
+        /// lblArtistState control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblArtistState;
+        
+        /// <summary>
         /// txtArtistLName control.
         /// </summary>
         /// <remarks>
@@ -362,6 +434,24 @@ namespace inkMap {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtArtistCompany;
+        
+        /// <summary>
+        /// txtArtistAddress2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtArtistAddress2;
+        
+        /// <summary>
+        /// txtArtistState control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtArtistState;
         
         /// <summary>
         /// lbtnCreateAccountArtist control.

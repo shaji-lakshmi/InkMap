@@ -15,6 +15,7 @@ using System.Data;
 using System.Data.SqlClient;
 using Utilities;
 
+
 namespace inkMap
 {
     public partial class Default : System.Web.UI.Page
@@ -22,7 +23,6 @@ namespace inkMap
         private Byte[] key = { 250, 101, 18, 76, 45, 135, 207, 118, 4, 171, 3, 168, 202, 241, 37, 199 };
         private Byte[] vector = { 146, 64, 191, 111, 23, 3, 113, 119, 231, 121, 252, 112, 79, 32, 114, 156 };
 
-        DBConnect objDB = new DBConnect();
         dbProcedures procedure = new dbProcedures();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -124,20 +124,56 @@ namespace inkMap
             txtPass.Text = " ";
         }
 
-        protected void lbtnCreateAccountCustomer_Click(object sender, EventArgs e)
+        public void NewAccount (Account account)
         {
             NewAccountService.Account AccountInfo = new NewAccountService.Account();
 
-            AccountInfo.password = txtConfirmPass.Text;
-            AccountInfo.accountType = "customer";
-            AccountInfo.firstName = txtCustomerFName.Text;
-            AccountInfo.lastName = txtCustomerLName.Text;
-            AccountInfo.email = txtCustomerEmail.Text;
-            AccountInfo.phoneNumber = txtCustomerPhone.Text;
+            AccountInfo.password = account.password;
+            AccountInfo.accountType = account.accountType;
+            AccountInfo.firstName = account.firstName;
+            AccountInfo.lastName = account.lastName;
+            AccountInfo.email = account.email;
+            AccountInfo.phoneNumber = account.phoneNumber;
 
             NewAccountService.NewAccount proxy = new NewAccountService.NewAccount();
 
-           if(proxy.AddAccount(AccountInfo))
+            if (proxy.AddAccount(AccountInfo))
+            {
+                lblStoreName.Text = "Account was created successfully!";
+
+            }
+            else
+            {
+                lblStoreName.Text = "Account was not created D:";
+
+            }
+
+        }
+
+        protected void lbtnCreateAccountCustomer_Click(object sender, EventArgs e)
+        {
+
+            Account custAccount = new Account();
+            custAccount.password = txtConfirmPass.Text;
+            custAccount.accountType = "customer";
+            custAccount.firstName = txtCustomerFName.Text;
+            custAccount.lastName = txtCustomerLName.Text;
+            custAccount.email = txtCustomerEmail.Text;
+            custAccount.phoneNumber = txtCustomerPhone.Text;
+
+            NewAccount(custAccount);
+
+            NewAccountService.Account customer = new NewAccountService.Account();
+
+            customer.firstName = txtCustomerFName.Text;
+            customer.lastName = txtCustomerLName.Text;
+            customer.email = txtCustomerEmail.Text;
+            customer.phoneNumber = txtCustomerPhone.Text;
+
+
+            NewAccountService.NewAccount proxy = new NewAccountService.NewAccount();
+
+            if (proxy.AddCustomer(customer))
             {
                 DataSet userData = procedure.getaccountidfromemail(txtCustomerEmail.Text);
                 Email verificationEmail = new Email();
@@ -146,18 +182,60 @@ namespace inkMap
                 string subject = "Verify your account";
                 int account = int.Parse(userData.Tables[0].Rows[0]["Account_ID"].ToString());
 
-                string body = "Please refer to this URL to confirm your account creation. http://localhost:63822/verification.aspx?ID="+account;
+                string body = "Please refer to this URL to confirm your account creation. http://localhost:63822/verification.aspx?ID=" + account;
                 verificationEmail.SendMail(receiveremail, senderEmail, subject, body);
-                
-                lblStoreName.Text = "Account was created successfully! Please check your email for verification Email.";
+
+                lblStoreName.Text = "Customer Account was created successfully!";
 
             }
-           else
+            else
             {
                 lblStoreName.Text = "Account was not created D:";
 
             }
-           
+
+
+        }
+
+        protected void lbtnCreateAccountArtist_Click(object sender, EventArgs e)
+        {
+            Account artType = new Account();
+            artType.password = txtArtistConfirm.Text;
+            artType.accountType = "artist";
+            artType.firstName = txtArtistFName.Text;
+            artType.lastName = txtArtistLName.Text;
+            artType.email = txtArtistEmail.Text;
+            artType.PhoneNumber = txtArtistPhone.Text;
+
+            NewAccount(artType);
+
+            NewAccountService.Artist artist = new NewAccountService.Artist();
+
+            artist.artist_FName = txtArtistFName.Text;
+            artist.artist_LName = txtArtistLName.Text;
+            artist.email = txtArtistEmail.Text;
+            artist.phoneNumber = txtArtistPhone.Text;
+            artist.company = txtArtistCompany.Text;
+            artist.rating = Convert.ToDecimal("0.0");
+            artist.certification = txtArtistCert.Text;
+            artist.city = txtArtistCity.Text;
+            artist.state = txtArtistState.Text;
+            artist.zipcode= txtArtistZipcode.Text;
+            artist.streetAddress = txtArtistStreetAddress.Text;
+            artist.address2 = txtArtistAddress2.Text;
+
+            NewAccountService.NewAccount proxy = new NewAccountService.NewAccount();
+
+            if (proxy.AddArtist(artist))
+            {
+                lblStoreName.Text = "Artist Account was created successfully!";
+
+            }
+            else
+            {
+                lblStoreName.Text = "Account was not created D:";
+
+            }
 
 
         }
