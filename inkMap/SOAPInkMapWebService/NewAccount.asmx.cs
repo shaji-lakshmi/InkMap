@@ -8,7 +8,8 @@ using InkMapLibrary;
 using Utilities;
 using System.Data;
 using System.Data.SqlClient;
-
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace SOAPInkMapWebService
 {
@@ -135,6 +136,34 @@ namespace SOAPInkMapWebService
             }
         }
 
+        [WebMethod]
+        [XmlInclude(typeof(Artist))]
+        public Artist GetArtistByZip(String zip)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand getArtistLocation = new SqlCommand();
+
+            getArtistLocation.CommandType = CommandType.StoredProcedure;
+            getArtistLocation.CommandText = "TP_searchLocation";
+            getArtistLocation.Parameters.AddWithValue("@location", zip);
+
+            DataSet result = objDB.GetDataSetUsingCmdObj(getArtistLocation);
+
+            Artist artist = new Artist();
+            artist.artist_FName = result.Tables[0].Rows[0]["Artist_FirstName"].ToString();
+            artist.artist_LName = result.Tables[0].Rows[0]["Artist_LastName"].ToString();
+            artist.email = result.Tables[0].Rows[0]["Email"].ToString();
+            artist.phoneNumber = result.Tables[0].Rows[0]["PhoneNumber"].ToString();
+            artist.company = result.Tables[0].Rows[0]["Company"].ToString();
+            artist.rating = Convert.ToDecimal(result.Tables[0].Rows[0]["Rating"].ToString());
+            artist.streetAddress = result.Tables[0].Rows[0]["StreetAddress"].ToString();
+            artist.address2 = result.Tables[0].Rows[0]["Address2"].ToString();
+            artist.city = result.Tables[0].Rows[0]["City"].ToString();
+            artist.state = result.Tables[0].Rows[0]["Artist_State"].ToString();
+            artist.zipcode = result.Tables[0].Rows[0]["Zipcode"].ToString();
+
+            return artist;
+        }
 
     }
 }

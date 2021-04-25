@@ -14,29 +14,24 @@ namespace inkMap
 
         }
 
-        protected void lbtnCreateAccountArtist_Click(object sender, EventArgs e)
+        protected void btnLocationSearch_Click(object sender, EventArgs e)
         {
-            //NewAccountService.Account AccountInfo = new NewAccountService.Account();
+            NewAccountService.NewAccount proxy = new NewAccountService.NewAccount();
 
-            //AccountInfo.password = txtConfirmPass.Text;
-            //AccountInfo.accountType = "artist";
-            //AccountInfo.firstName = txtCustomerFName.Text;
-            //AccountInfo.lastName = txtCustomerLName.Text;
-            //AccountInfo.email = txtCustomerEmail.Text;
-            //AccountInfo.phoneNumber = txtCustomerPhone.Text;
+            NewAccountService.Artist artist = proxy.GetArtistByZip(txtLocationArtist.Text);
 
-            //NewAccountService.NewAccount proxy = new NewAccountService.NewAccount();
-
-            //if (proxy.AddAccount(AccountInfo))
-            //{
-            //    lblStoreName.Text = "Account was created successfully!";
-
-            //}
-            //else
-            //{
-            //    lblStoreName.Text = "Account was not created D:";
-
-            //}
+            if(artist != null)
+            {
+                lblArtistFName.Text = artist.artist_FName;
+                lblArtistLName.Text = artist.artist_LName;
+                lblCompany.Text = artist.company;
+                lblCity.Text = artist.city;
+                lblState.Text = artist.state;
+            }
+            else
+            {
+                lblArtistFName.Text = "Nothing.";
+            }
 
         }
     }

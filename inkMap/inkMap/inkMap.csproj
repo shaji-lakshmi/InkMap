@@ -80,8 +80,11 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Content Include="NavigationBar.ascx" />
-    <None Include="Web References\NewAccountService\NewAccount.disco" />
     <Content Include="verification.aspx" />
+    <Content Include="Web References\NewAccountService\Artist.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\NewAccountService\NewAccount.disco" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

@@ -88,6 +88,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetArtistByZip">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zip" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetArtistByZipResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetArtistByZipResult" type="tns:Artist" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="AddAccountSoapIn">
@@ -108,6 +122,12 @@
   <wsdl:message name="AddCustomerSoapOut">
     <wsdl:part name="parameters" element="tns:AddCustomerResponse" />
   </wsdl:message>
+  <wsdl:message name="GetArtistByZipSoapIn">
+    <wsdl:part name="parameters" element="tns:GetArtistByZip" />
+  </wsdl:message>
+  <wsdl:message name="GetArtistByZipSoapOut">
+    <wsdl:part name="parameters" element="tns:GetArtistByZipResponse" />
+  </wsdl:message>
   <wsdl:portType name="NewAccountSoap">
     <wsdl:operation name="AddAccount">
       <wsdl:input message="tns:AddAccountSoapIn" />
@@ -120,6 +140,10 @@
     <wsdl:operation name="AddCustomer">
       <wsdl:input message="tns:AddCustomerSoapIn" />
       <wsdl:output message="tns:AddCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArtistByZip">
+      <wsdl:input message="tns:GetArtistByZipSoapIn" />
+      <wsdl:output message="tns:GetArtistByZipSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NewAccountSoap" type="tns:NewAccountSoap">
@@ -151,6 +175,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetArtistByZip">
+      <soap:operation soapAction="http://tempuri.org/GetArtistByZip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="NewAccountSoap12" type="tns:NewAccountSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -174,6 +207,15 @@
     </wsdl:operation>
     <wsdl:operation name="AddCustomer">
       <soap12:operation soapAction="http://tempuri.org/AddCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArtistByZip">
+      <soap12:operation soapAction="http://tempuri.org/GetArtistByZip" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

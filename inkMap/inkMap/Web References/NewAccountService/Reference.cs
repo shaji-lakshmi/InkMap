@@ -35,6 +35,8 @@ namespace inkMap.NewAccountService {
         
         private System.Threading.SendOrPostCallback AddCustomerOperationCompleted;
         
+        private System.Threading.SendOrPostCallback GetArtistByZipOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -81,6 +83,9 @@ namespace inkMap.NewAccountService {
         
         /// <remarks/>
         public event AddCustomerCompletedEventHandler AddCustomerCompleted;
+        
+        /// <remarks/>
+        public event GetArtistByZipCompletedEventHandler GetArtistByZipCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/AddAccount", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -166,6 +171,35 @@ namespace inkMap.NewAccountService {
             if ((this.AddCustomerCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.AddCustomerCompleted(this, new AddCustomerCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetArtistByZip", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Artist GetArtistByZip(string zip) {
+            object[] results = this.Invoke("GetArtistByZip", new object[] {
+                        zip});
+            return ((Artist)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetArtistByZipAsync(string zip) {
+            this.GetArtistByZipAsync(zip, null);
+        }
+        
+        /// <remarks/>
+        public void GetArtistByZipAsync(string zip, object userState) {
+            if ((this.GetArtistByZipOperationCompleted == null)) {
+                this.GetArtistByZipOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetArtistByZipOperationCompleted);
+            }
+            this.InvokeAsync("GetArtistByZip", new object[] {
+                        zip}, this.GetArtistByZipOperationCompleted, userState);
+        }
+        
+        private void OnGetArtistByZipOperationCompleted(object arg) {
+            if ((this.GetArtistByZipCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetArtistByZipCompleted(this, new GetArtistByZipCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -712,6 +746,32 @@ namespace inkMap.NewAccountService {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetArtistByZipCompletedEventHandler(object sender, GetArtistByZipCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetArtistByZipCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetArtistByZipCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Artist Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Artist)(this.results[0]));
             }
         }
     }
