@@ -69,5 +69,35 @@ namespace InkMapLibrary
             return responseData;
         }
 
+        public DataSet getaccounttype(int accountid)
+        {
+            SqlCommand procedure = new SqlCommand();
+            procedure.CommandType = CommandType.StoredProcedure;
+            procedure.CommandText = "TP_GetAccountType";
+
+            SqlParameter accountInfo = new SqlParameter("@accountID", accountid);
+            accountInfo.Direction = ParameterDirection.Input;
+            procedure.Parameters.Add(accountInfo);
+
+            DataSet responseData = dBConnect.GetDataSetUsingCmdObj(procedure);
+            return responseData;
+        }
+
+        public DataSet getcustomerinfo(int accountid)
+        {
+            SqlCommand procedure = new SqlCommand();
+            procedure.CommandType = CommandType.StoredProcedure;
+            procedure.CommandText = "TP_getCustomerInfo";
+
+            SqlParameter accountInfo = new SqlParameter("@accountID", accountid);
+            accountInfo.Direction = ParameterDirection.Input;
+            procedure.Parameters.Add(accountInfo);
+
+            DataSet responseData = dBConnect.GetDataSetUsingCmdObj(procedure);
+            return responseData;
+        }
+
+
+
     }
 }

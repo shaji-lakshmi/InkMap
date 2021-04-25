@@ -89,3 +89,13 @@ nav{
     color: white;
     background-color: #b8aa9d;
 }
+
+.forms {
+    background-color: white;
+    width: 60%;
+    height: 350px;
+    padding: 2%;
+    border: 5px double #b8aa9d;
+    margin-left: 20%;
+    margin-top: 10%;
+}

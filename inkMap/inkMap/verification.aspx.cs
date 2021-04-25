@@ -16,10 +16,12 @@ namespace inkMap
 {
     public partial class verification : System.Web.UI.Page
     {
+        DBConnect objDB = new DBConnect();
+        dbProcedures procedure = new dbProcedures();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            DBConnect objDB = new DBConnect();
-            dbProcedures procedure = new dbProcedures();
+          
 
             if (Request.QueryString["ID"] != null)
             {
@@ -76,7 +78,14 @@ namespace inkMap
 
         protected void lbtnBeginSetUp_Click(object sender, EventArgs e)
         {
+            int accountid = int.Parse(Request.QueryString["ID"]);
+            DataSet accountType = procedure.getaccounttype(accountid);
+            string userType = accountType.Tables[0].Rows[0]["AccountType"].ToString();
 
+            if(userType == "customer")
+            {
+                Response.Redirect("CustProfileCreation.aspx?ID="+accountid);
+            }
         }
     }
 }

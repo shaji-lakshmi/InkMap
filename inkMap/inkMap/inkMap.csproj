@@ -74,6 +74,7 @@
     <Content Include="assets\images\background3.jpg" />
     <Content Include="assets\images\background4.jpg" />
     <Content Include="assets\js\homePage.js" />
+    <Content Include="CustProfileCreation.aspx" />
     <Content Include="Default.aspx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -94,6 +95,13 @@
     </Compile>
     <Compile Include="ArtistSearch.aspx.designer.cs">
       <DependentUpon>ArtistSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustProfileCreation.aspx.cs">
+      <DependentUpon>CustProfileCreation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustProfileCreation.aspx.designer.cs">
+      <DependentUpon>CustProfileCreation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
