@@ -23,28 +23,61 @@ namespace inkMap
 
             if (Request.QueryString["ID"] != null)
             {
-
                 int accountid = int.Parse(Request.QueryString["ID"]);
                 DataSet userData = procedure.getVerificationInformation(accountid);
+                DataSet verificationStatus = procedure.getverification(accountid);
+                int verifactionCode = int.Parse(verificationStatus.Tables[0].Rows[0]["Verification"].ToString());
 
-                int updateStatus = procedure.updateAccountVerification(accountid);
-                // strSQL = "SELECT FirstName, LastName FROM TP_Account Where Account_ID = " + Request.QueryString["ID"];
-                // ds = objDB.GetDataSet(strSQL);
 
-                if (updateStatus == 1)
+                if (verifactionCode != 1)
                 {
-                    string fName = userData.Tables[0].Rows[0]["FirstName"].ToString();
-                    string lName = userData.Tables[0].Rows[0]["LastName"].ToString();
-                    string accountName = fName + " " + lName;
-                    lblVerificationInfo.Text = accountName;
+                    int updateStatus = procedure.updateAccountVerification(accountid);
+
+                    if (updateStatus == 1)
+                    {
+                        string fName = userData.Tables[0].Rows[0]["FirstName"].ToString();
+                        string lName = userData.Tables[0].Rows[0]["LastName"].ToString();
+                        string accountName = fName + " " + lName;
+                        lblVerificationTitle.Text = "Account has been verified";
+                        lblVerificationInfo.Text = "Account for " + accountName + " has been verified. You are now able to access your information. Please click the button below to begin account set up.";
+                        lbtnBackHome.Visible = false;
+                    }
+                    else
+                    {
+                        lblVerificationTitle.Text = "Something went wrong";
+                        lblVerificationInfo.Text = "Your account was not verified. Please contect system admins.";
+                        lbtnBeginSetUp.Text = "Log In";
+                        lbtnBeginSetUp.Visible = false;
+                    }
+
                 }
                 else
                 {
-                    Response.Write("<script>alert('Something went wrong with your verification. Please contact system admins.')</script>");
-
+                    lblVerificationTitle.Text = "Verification Not Valid";
+                    lblVerificationInfo.Text = "Verification of this account has already been complete. Please click the link below to log in to your account.";
+                    lbtnBeginSetUp.Text = "Log In";
+                    lbtnBeginSetUp.Visible = false;
                 }
-
             }
+            else
+            {
+                lblVerificationTitle.Text = "ERROR";
+                lblVerificationInfo.Text = "You did not enter the valid URL needed to verify your accout. Reminder that all verification links are sent to the email you used to sign up with us. Please check you email or contact an admin for help.";
+                lbtnBeginSetUp.Visible = false;
+            }
+
+
+        }
+
+        protected void lbtnBackHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx"); 
+        }
+
+        protected void lbtnBeginSetUp_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
+

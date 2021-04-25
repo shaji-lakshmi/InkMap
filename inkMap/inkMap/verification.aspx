@@ -15,17 +15,23 @@
 <div class="container-fluid" >
     <div id="verificationNote">
     <div class="row">
-        <h1 class="homePageTitle">Account Verified</h1>
-    </div>
-
-    <div class="row">
-        <div class="col-md-8">
-        <p>Account for account holder, <asp:Label ID="lblVerificationInfo" runat="server"></asp:Label>, is ready to be accessed. You are now a verified user. Please click the link below to access the system.</p>
+        <div class="col-md-4"></div>
+        <div class="col-m-4">
+        <h1 class="homePageTitle">
+            <asp:Label ID="lblVerificationTitle" runat="server" ></asp:Label></h1>
     </div>
         </div>
     <div class="row">
-        <div class="col-md-3">
-     <a class="btn btn-lg btn-block" id="signIn">Get Started</a>
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+        <p><asp:Label ID="lblVerificationInfo" runat="server"></asp:Label></p>
+    </div>
+        </div>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <asp:LinkButton ID="lbtnBeginSetUp" class="btn btn-lg btn-block btnredirect" runat="server" OnClick="lbtnBeginSetUp_Click" Text="Get Started"></asp:LinkButton>
+            <asp:LinkButton ID="lbtnBackHome" class="btn btn-lg btn-block btnredirect" runat="server" OnClick="lbtnBackHome_Click" Text="Log In"></asp:LinkButton>
             </div>
 
     </div>

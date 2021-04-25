@@ -178,3 +178,9 @@ C:\Users\mizuh\Documents\GitHub\InkMap\inkMap\inkMap\obj\Debug\inkMap.csproj.Cor
 C:\Users\mizuh\Documents\GitHub\InkMap\inkMap\inkMap\obj\Debug\inkMap.csproj.CopyComplete
 C:\Users\mizuh\Documents\GitHub\InkMap\inkMap\inkMap\obj\Debug\inkMap.dll
 C:\Users\mizuh\Documents\GitHub\InkMap\inkMap\inkMap\obj\Debug\inkMap.pdb
+C:\Users\Lakshmi\Desktop\InkMap\inkMap\inkMap\bin\InkMapLibrary.dll
+C:\Users\Lakshmi\Desktop\InkMap\inkMap\inkMap\bin\SOAPInkMapWebService.dll
+C:\Users\Lakshmi\Desktop\InkMap\inkMap\inkMap\bin\InkMapLibrary.pdb
+C:\Users\Lakshmi\Desktop\InkMap\inkMap\inkMap\bin\InkMapLibrary.dll.config
+C:\Users\Lakshmi\Desktop\InkMap\inkMap\inkMap\bin\SOAPInkMapWebService.pdb
+C:\Users\Lakshmi\Desktop\InkMap\inkMap\inkMap\bin\SOAPInkMapWebService.dll.config
