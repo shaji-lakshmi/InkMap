@@ -33,6 +33,7 @@ namespace inkMap
             }
             else
             {
+                Response.Write("<script>alert('Invalid page request. Please go to inkmap.com to get started.')</script>");
 
             }
 
@@ -44,8 +45,10 @@ namespace inkMap
             int imageSize;
             string fileExtension;
             string imgType;
-            string imgName; 
-            
+            string imgName;
+
+            DataSet typeHandler = procedure.getaccounttype(accountid);
+            string type = typeHandler.Tables[0].Rows[0]["AccountType"].ToString();
             try
             {
                 if (uploadProfilePic.HasFile)
@@ -72,7 +75,8 @@ namespace inkMap
 
 
                 }
-                Response.Redirect("CustomerLandingPage.aspx?ID=" + accountid);
+                    Response.Redirect("CustomerLandingPage.aspx?ID=" + accountid);
+             
             }catch{
 
             }

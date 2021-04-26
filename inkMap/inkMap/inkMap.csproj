@@ -67,6 +67,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ArtistPortfolioCreation.aspx" />
+    <Content Include="ArtistProfileCreation.aspx" />
     <Content Include="ArtistSearch.aspx" />
     <Content Include="assets\css\global.css" />
     <Content Include="assets\images\background1.jpg" />
@@ -93,6 +95,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArtistPortfolioCreation.aspx.cs">
+      <DependentUpon>ArtistPortfolioCreation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArtistPortfolioCreation.aspx.designer.cs">
+      <DependentUpon>ArtistPortfolioCreation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistProfileCreation.aspx.cs">
+      <DependentUpon>ArtistProfileCreation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArtistProfileCreation.aspx.designer.cs">
+      <DependentUpon>ArtistProfileCreation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ArtistSearch.aspx.cs">
       <DependentUpon>ArtistSearch.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -142,6 +158,7 @@
     <Compile Include="NavigationBar.ascx.designer.cs">
       <DependentUpon>NavigationBar.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Portfolio.cs" />
     <Compile Include="profileImageGrab.aspx.cs">
       <DependentUpon>profileImageGrab.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -228,6 +228,16 @@ namespace inkMap
 
             if (proxy.AddArtist(artist))
             {
+                DataSet userData = procedure.getaccountidfromemail(txtArtistEmail.Text);
+                Email verificationEmail = new Email();
+                string receiveremail = txtCustomerEmail.Text;
+                string senderEmail = "verify@inkmap.com";
+                string subject = "Verify your account";
+                int account = int.Parse(userData.Tables[0].Rows[0]["Account_ID"].ToString());
+
+                string body = "Please refer to this URL to confirm your account creation. http://localhost:63822/verification.aspx?ID=" + account;
+                verificationEmail.SendMail(receiveremail, senderEmail, subject, body);
+
                 lblStoreName.Text = "Artist Account was created successfully!";
 
             }

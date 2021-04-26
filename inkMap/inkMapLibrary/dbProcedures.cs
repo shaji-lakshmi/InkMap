@@ -97,6 +97,19 @@ namespace InkMapLibrary
             return responseData;
         }
 
+        public DataSet getArtistInfo(int accountid)
+        {
+            SqlCommand procedure = new SqlCommand();
+            procedure.CommandType = CommandType.StoredProcedure;
+            procedure.CommandText = "TP_GetArtistInfo";
+
+            SqlParameter accountInfo = new SqlParameter("@accountID", accountid);
+            accountInfo.Direction = ParameterDirection.Input;
+            procedure.Parameters.Add(accountInfo);
+
+            DataSet responseData = dBConnect.GetDataSetUsingCmdObj(procedure);
+            return responseData;
+        }
 
         public int updateProfileImage(int accountid, string title, string type, byte [] data, int length)
         {

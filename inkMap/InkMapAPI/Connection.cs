@@ -31,7 +31,7 @@ namespace Utilities
         // Returns: a DataSet containing the records found by the query. 
         // Note: The DataSet is also stored as a class variable for use in the GetField method
         public DataSet GetDataSet(String SqlSelect)
-        {         
+        {
             SqlDataAdapter myDataAdapter = new SqlDataAdapter(SqlSelect, myConnectionSql);
             DataSet myDataSet = new DataSet();
             myDataAdapter.Fill(myDataSet);
@@ -130,7 +130,7 @@ namespace Utilities
             myDataAdapter.Fill(myDataSet);
             ds = myDataSet;
 
-            return myDataSet;          
+            return myDataSet;
         }
 
         // This method is used to retrieve a row from a DataSet.

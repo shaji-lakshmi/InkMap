@@ -9,7 +9,7 @@
     <div class="navbar-nav">
       <a class="nav-item nav-link" href="#">Products<span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="#">Settings</a>
-      <a class="nav-item nav-link" href="#">Logout</a>
+      <a class="nav-item nav-link" href="Default.aspx">Logout</a>
     </div>
   </div>
 </nav>

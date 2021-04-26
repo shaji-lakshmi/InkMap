@@ -82,9 +82,13 @@ namespace inkMap
             DataSet accountType = procedure.getaccounttype(accountid);
             string userType = accountType.Tables[0].Rows[0]["AccountType"].ToString();
 
-            if(userType == "customer")
+            if (userType == "customer")
             {
-                Response.Redirect("CustProfileCreation.aspx?ID="+accountid);
+                Response.Redirect("CustProfileCreation.aspx?ID=" + accountid);
+            }
+            else
+            {
+                Response.Redirect("ArtistProfileCreation.aspx?ID=" + accountid);
             }
         }
     }

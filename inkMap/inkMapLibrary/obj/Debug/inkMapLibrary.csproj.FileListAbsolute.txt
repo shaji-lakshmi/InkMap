@@ -160,7 +160,6 @@ C:\Users\Lakshmi\Desktop\InkMap\inkMap\InkMapLibrary\bin\roslyn\VBCSCompiler.exe
 C:\Users\Lakshmi\Desktop\InkMap\inkMap\InkMapLibrary\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\Lakshmi\Desktop\InkMap\inkMap\InkMapLibrary\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Lakshmi\Desktop\InkMap\inkMap\InkMapLibrary\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Lakshmi\Desktop\InkMap\inkMap\InkMapLibrary\obj\Debug\InkMapLibrary.csprojAssemblyReference.cache
 C:\Users\Lakshmi\Desktop\InkMap\inkMap\InkMapLibrary\obj\Debug\InkMapLibrary.csproj.CoreCompileInputs.cache
 C:\Users\Lakshmi\Desktop\InkMap\inkMap\InkMapLibrary\obj\Debug\InkMapLibrary.csproj.CopyComplete
 C:\Users\Lakshmi\Desktop\InkMap\inkMap\InkMapLibrary\obj\Debug\InkMapLibrary.dll
