@@ -31,12 +31,12 @@ namespace inkMap {
         protected global::inkMap.CustomerMainNav CustomerMainNav;
         
         /// <summary>
-        /// CustomerSidenavMenu control.
+        /// ArtistSideNav control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::inkMap.CustomerSidenavMenu CustomerSidenavMenu;
+        protected global::inkMap.ArtistSideNav1 ArtistSideNav;
     }
 }

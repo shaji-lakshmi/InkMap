@@ -31,15 +31,6 @@ namespace inkMap {
         protected global::System.Web.UI.WebControls.Label lblPortfolioTitle;
         
         /// <summary>
-        /// lbluploadMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbluploadMessage;
-        
-        /// <summary>
         /// lblUploadportfoliopics control.
         /// </summary>
         /// <remarks>
@@ -49,13 +40,22 @@ namespace inkMap {
         protected global::System.Web.UI.WebControls.Label lblUploadportfoliopics;
         
         /// <summary>
-        /// uploadportfoliopics control.
+        /// uploadPortfolio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload uploadportfoliopics;
+        protected global::System.Web.UI.WebControls.FileUpload uploadPortfolio;
+        
+        /// <summary>
+        /// lbtnAddMore control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnAddMore;
         
         /// <summary>
         /// lbtnUploadPortfolio control.

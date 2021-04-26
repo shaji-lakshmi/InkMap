@@ -67,9 +67,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ArtistLandingPage.aspx" />
+    <Content Include="ArtistPortfolio.ascx" />
     <Content Include="ArtistPortfolioCreation.aspx" />
     <Content Include="ArtistProfileCreation.aspx" />
     <Content Include="ArtistSearch.aspx" />
+    <Content Include="ArtistSideNav.ascx" />
     <Content Include="assets\css\global.css" />
     <Content Include="assets\images\background1.jpg" />
     <Content Include="assets\images\background2.jpg" />
@@ -86,6 +89,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Content Include="NavigationBar.ascx" />
+    <Content Include="PortImagesGrab.aspx" />
     <Content Include="profileImageGrab.aspx" />
     <Content Include="verification.aspx" />
     <Content Include="Web References\NewAccountService\Artist.datasource">
@@ -95,6 +99,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArtistLandingPage.aspx.cs">
+      <DependentUpon>ArtistLandingPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArtistLandingPage.aspx.designer.cs">
+      <DependentUpon>ArtistLandingPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistPortfolio.ascx.cs">
+      <DependentUpon>ArtistPortfolio.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArtistPortfolio.ascx.designer.cs">
+      <DependentUpon>ArtistPortfolio.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ArtistPortfolioCreation.aspx.cs">
       <DependentUpon>ArtistPortfolioCreation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -115,6 +133,13 @@
     </Compile>
     <Compile Include="ArtistSearch.aspx.designer.cs">
       <DependentUpon>ArtistSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistSideNav.ascx.cs">
+      <DependentUpon>ArtistSideNav.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArtistSideNav.ascx.designer.cs">
+      <DependentUpon>ArtistSideNav.ascx</DependentUpon>
     </Compile>
     <Compile Include="CustomerLandingPage.aspx.cs">
       <DependentUpon>CustomerLandingPage.aspx</DependentUpon>
@@ -159,6 +184,13 @@
       <DependentUpon>NavigationBar.ascx</DependentUpon>
     </Compile>
     <Compile Include="Portfolio.cs" />
+    <Compile Include="PortImagesGrab.aspx.cs">
+      <DependentUpon>PortImagesGrab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PortImagesGrab.aspx.designer.cs">
+      <DependentUpon>PortImagesGrab.aspx</DependentUpon>
+    </Compile>
     <Compile Include="profileImageGrab.aspx.cs">
       <DependentUpon>profileImageGrab.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

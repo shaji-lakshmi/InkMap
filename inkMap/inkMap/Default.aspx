@@ -95,7 +95,7 @@
                     <asp:TextBox ID="txtCustomerEmail" runat="server" TabIndex="3"></asp:TextBox>
                     <br />
                     <br />
-                    <asp:TextBox ID="txtCustomerPassword" runat="server" TabIndex="5"></asp:TextBox>
+                    <asp:TextBox ID="txtCustomerPassword" runat="server" TabIndex="5" TextMode="Password"></asp:TextBox>
 
 
                 </div>
@@ -119,7 +119,7 @@
                     <asp:TextBox ID="txtCustomerPhone" runat="server" TabIndex="4"></asp:TextBox>
                     <br />
                     <br />
-                    <asp:TextBox ID="txtConfirmPass" runat="server" TabIndex="6"></asp:TextBox>
+                    <asp:TextBox ID="txtConfirmPass" runat="server" TabIndex="6" TextMode="Password"></asp:TextBox>
                     <br />
                     <br />
                     <asp:LinkButton ID="lbtnCreateAccountCustomer" class="btn btn-lg btn-block btn-secondary" runat="server" OnClick="lbtnCreateAccountCustomer_Click">Create Account</asp:LinkButton>

@@ -17,6 +17,7 @@ namespace inkMap
     {
         DBConnect objDB = new DBConnect();
         dbProcedures procedure = new dbProcedures();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.QueryString["ID"] != null)
@@ -69,7 +70,7 @@ namespace inkMap
                         Response.Write("<script>alert('This site does not accept the file type you uploaded. Please submit a .jpg, .jpeg or .png file.')</script>");
 
                     }
-                    Response.Redirect("ArtistPortfolioCreation.aspx");
+                    Response.Redirect("ArtistPortfolioCreation.aspx?ID="+accountid);
 
                 }
             }

@@ -11,13 +11,24 @@ using System.Net;
 using InkMapLibrary;
 using InkMapAPI.Models;
 
+using Utilities;
+using System.Data;
+using System.Collections;
+using System.Data.SqlClient;
 namespace inkMap
 {
     public partial class ArtistPortfolioCreation : System.Web.UI.Page
     {
+        DBConnect objDB = new DBConnect();
+        dbProcedures procedure = new dbProcedures();
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Request.QueryString["ID"] == null)
+            {
+                Response.Write("<script>alert('Invalid page request. Please go to inkmap.com to get started.')</script>");
 
+            }
         }
 
         protected void lbtnUploadPortfolio_Click(object sender, EventArgs e)
@@ -27,77 +38,78 @@ namespace inkMap
             string fileExtension;
             string imgType;
             string imgName;
+
             try
             {
-                if (uploadportfoliopics.HasFile)
+                if (uploadPortfolio.HasFile)
                 {
-                    imageSize = uploadportfoliopics.PostedFile.ContentLength;
+                    imageSize = uploadPortfolio.PostedFile.ContentLength;
                     byte[] imageData = new byte[imageSize];
+                    uploadPortfolio.PostedFile.InputStream.Read(imageData, 0, imageSize);
 
-                    uploadportfoliopics.PostedFile.InputStream.Read(imageData, 0, imageSize);
-                    imgName = uploadportfoliopics.PostedFile.FileName;
-                    imgType = uploadportfoliopics.PostedFile.ContentType;
+                    imgName = uploadPortfolio.PostedFile.FileName;
+                    imgType = uploadPortfolio.PostedFile.ContentType;
 
                     fileExtension = imgName.Substring(imgName.LastIndexOf("."));
                     fileExtension = fileExtension.ToLower();
 
                     if (fileExtension == ".jpg" || fileExtension == ".jpeg" || fileExtension == ".png")
                     {
-                        //Response.Write("<script>alert('Correct File has been used.')</script>");
-
-                        Portfolio image = new Portfolio();
-                        image.accountid = accountid;
-                        image.title = imgName;
-                        image.type = imgType;
-                        image.data = imageData;
-                        image.length = imageData.Length; 
-
-                        JavaScriptSerializer js = new JavaScriptSerializer();
-                        String jsonTeam = js.Serialize(image);
-                        try{
-
-                            // Setup an HTTP POST Web Request and get the HTTP Web Response from the server.
-
-                            WebRequest request = WebRequest.Create("https://localhost:44328/api/PortfolioPics");
-                            request.Method = "POST";
-                            request.ContentLength = jsonTeam.Length;
-                            request.ContentType = "application/json";
-                            // Write the JSON data to the Web Request
-
-                            StreamWriter writer = new StreamWriter(request.GetRequestStream());
-                            writer.Write(jsonTeam);
-                            writer.Flush();
-                            writer.Close();
-
-                            // Read the data from the Web Response, which requires working with streams.
-                            WebResponse response = request.GetResponse();
-                            Stream theDataStream = response.GetResponseStream();
-                            StreamReader reader = new StreamReader(theDataStream);
-                            String data = reader.ReadToEnd();
-                            reader.Close();
-                            response.Close();
-                        }
-                        catch
-                        {
-
-                        }
+                        int updateDB = procedure.updatePortfolioPic(accountid, imgName, imgType, imageData, imageData.Length);
+                        Response.Redirect("ArtistLandinPage.aspx?ID="+accountid); 
                     }
                     else
                     {
                         Response.Write("<script>alert('This site does not accept the file type you uploaded. Please submit a .jpg, .jpeg or .png file.')</script>");
 
                     }
-
-
-                    }
+                }
             }
-            catch { 
-            }
-           
+            catch(Exception ex)
             {
 
             }
-         
+        }
+
+        protected void lbtnAddMore_Click(object sender, EventArgs e)
+        {
+            int accountid = int.Parse(Request.QueryString["ID"]);
+            int imageSize;
+            string fileExtension;
+            string imgType;
+            string imgName;
+
+            try
+            {
+                if (uploadPortfolio.HasFile)
+                {
+                    imageSize = uploadPortfolio.PostedFile.ContentLength;
+                    byte[] imageData = new byte[imageSize];
+                    uploadPortfolio.PostedFile.InputStream.Read(imageData, 0, imageSize);
+
+                    imgName = uploadPortfolio.PostedFile.FileName;
+                    imgType = uploadPortfolio.PostedFile.ContentType;
+
+                    fileExtension = imgName.Substring(imgName.LastIndexOf("."));
+                    fileExtension = fileExtension.ToLower();
+
+                    if (fileExtension == ".jpg" || fileExtension == ".jpeg" || fileExtension == ".png")
+                    {
+                        int updateDB = procedure.updatePortfolioPic(accountid, imgName, imgType, imageData, imageData.Length);
+                        Response.Write("<script>alert('Your image has been uploaded. Please Pick your next entry.')</script>");
+
+                    }
+                    else
+                    {
+                        Response.Write("<script>alert('This site does not accept the file type you uploaded. Please submit a .jpg, .jpeg or .png file.')</script>");
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
     }
 }

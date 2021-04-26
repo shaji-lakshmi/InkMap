@@ -127,3 +127,13 @@ nav{
             text-decoration:underline;
             color: white;
         }
+.main {
+    margin-left: 11%; /* Same as the width of the sidenav */
+}
+
+#Profileheading {
+    font-size: 16px;
+    color: white;
+    padding: 5%;
+    background-color: #404040;
+}
