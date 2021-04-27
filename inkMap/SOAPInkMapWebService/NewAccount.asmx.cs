@@ -10,6 +10,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Xml;
 using System.Xml.Serialization;
+using System.Collections;
 
 namespace SOAPInkMapWebService
 {
@@ -58,11 +59,10 @@ namespace SOAPInkMapWebService
             }
 
 
-
         }
 
         [WebMethod]
-        public Boolean AddArtist (Artist art)
+        public Boolean AddArtist(Artist art)
         {
             if (art != null)
             {
@@ -104,7 +104,7 @@ namespace SOAPInkMapWebService
         }
 
         [WebMethod]
-        public Boolean AddCustomer (Account customer)
+        public Boolean AddCustomer(Account customer)
         {
             if (customer != null)
             {
@@ -137,32 +137,111 @@ namespace SOAPInkMapWebService
         }
 
         [WebMethod]
-        [XmlInclude(typeof(Artist))]
-        public Artist GetArtistByZip(String zip)
+        public ArrayList GetArtistByZip(String zip)
         {
             DBConnect objDB = new DBConnect();
-            SqlCommand getArtistLocation = new SqlCommand();
+            SqlCommand objCommand = new SqlCommand();
 
-            getArtistLocation.CommandType = CommandType.StoredProcedure;
-            getArtistLocation.CommandText = "TP_searchLocation";
-            getArtistLocation.Parameters.AddWithValue("@location", zip);
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_searchLocation";
 
-            DataSet result = objDB.GetDataSetUsingCmdObj(getArtistLocation);
+            SqlParameter location = new SqlParameter("@location", zip);
+            location.Direction = ParameterDirection.Input;
+            objCommand.Parameters.Add(location);
 
-            Artist artist = new Artist();
-            artist.artist_FName = result.Tables[0].Rows[0]["Artist_FirstName"].ToString();
-            artist.artist_LName = result.Tables[0].Rows[0]["Artist_LastName"].ToString();
-            artist.email = result.Tables[0].Rows[0]["Email"].ToString();
-            artist.phoneNumber = result.Tables[0].Rows[0]["PhoneNumber"].ToString();
-            artist.company = result.Tables[0].Rows[0]["Company"].ToString();
-            artist.rating = Convert.ToDecimal(result.Tables[0].Rows[0]["Rating"].ToString());
-            artist.streetAddress = result.Tables[0].Rows[0]["StreetAddress"].ToString();
-            artist.address2 = result.Tables[0].Rows[0]["Address2"].ToString();
-            artist.city = result.Tables[0].Rows[0]["City"].ToString();
-            artist.state = result.Tables[0].Rows[0]["Artist_State"].ToString();
-            artist.zipcode = result.Tables[0].Rows[0]["Zipcode"].ToString();
+            DataSet result = objDB.GetDataSetUsingCmdObj(objCommand);
+            int size = result.Tables[0].Rows.Count;
+            ArrayList art = new ArrayList();
 
-            return artist;
+            for (int i = 0; i < size; i++)
+            {
+                Artist artist = new Artist();
+                artist.artist_FName = result.Tables[0].Rows[0]["Artist_FirstName"].ToString();
+                artist.artist_LName = result.Tables[0].Rows[0]["Artist_LastName"].ToString();
+                artist.email = result.Tables[0].Rows[0]["Email"].ToString();
+                artist.phoneNumber = result.Tables[0].Rows[0]["PhoneNumber"].ToString();
+                artist.company = result.Tables[0].Rows[0]["Company"].ToString();
+                artist.rating = Convert.ToDecimal(result.Tables[0].Rows[0]["Rating"].ToString());
+                artist.streetAddress = result.Tables[0].Rows[0]["StreetAddress"].ToString();
+                artist.address2 = result.Tables[0].Rows[0]["Address2"].ToString();
+                artist.city = result.Tables[0].Rows[0]["City"].ToString();
+                artist.state = result.Tables[0].Rows[0]["Artist_State"].ToString();
+                artist.zipcode = result.Tables[0].Rows[0]["Zipcode"].ToString();
+                artist.artist_ID = Int32.Parse(result.Tables[0].Rows[0]["Artist_ID"].ToString());
+                artist.certification = result.Tables[0].Rows[0]["Certification"].ToString();
+
+                art.Add(artist);
+            }
+
+            return art;
+        }
+
+        [WebMethod]
+        [XmlInclude(typeof(Testimonial))]
+        public Boolean AddTestimonial(Testimonial comment)
+        {
+            if (comment != null)
+            {
+                DBConnect objDB = new DBConnect();
+                SqlCommand addTestcmd = new SqlCommand();
+
+                addTestcmd.CommandType = CommandType.StoredProcedure;
+                addTestcmd.CommandText = "TP_AddTestimonial";
+
+                addTestcmd.Parameters.AddWithValue("@artist_ID", comment.artist_ID);
+                addTestcmd.Parameters.AddWithValue("@cust_ID", comment.cust_ID);
+                addTestcmd.Parameters.AddWithValue("@title", comment.title);
+                addTestcmd.Parameters.AddWithValue("@body", comment.body);
+
+                int result = objDB.DoUpdateUsingCmdObj(addTestcmd);
+
+                if (result > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        [WebMethod]
+        [XmlInclude(typeof(Appointment))]
+        public Boolean ScheduleAppointment(Appointment appt)
+        {
+            if (appt != null)
+            {
+                DBConnect objDB = new DBConnect();
+                SqlCommand addTestcmd = new SqlCommand();
+
+                addTestcmd.CommandType = CommandType.StoredProcedure;
+                addTestcmd.CommandText = "TP_ScheduleAppointment";
+
+                addTestcmd.Parameters.AddWithValue("@artist_ID", appt.artist_ID);
+                addTestcmd.Parameters.AddWithValue("@cust_ID", appt.cust_ID);
+                addTestcmd.Parameters.AddWithValue("@date", appt.date);
+                addTestcmd.Parameters.AddWithValue("@time", appt.time);
+
+                int result = objDB.DoUpdateUsingCmdObj(addTestcmd);
+
+                if (result > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
 
     }

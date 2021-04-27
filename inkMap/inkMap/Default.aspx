@@ -61,13 +61,15 @@
 
                         <br />
                         <br />
-                        <asp:LinkButton ID="lbtnSignIn" class="btn btn-lg  btn-secondary" runat="server">Sign In</asp:LinkButton>
+                         <asp:LinkButton ID="lbtnSignIn" class="btn btn-lg  btn-secondary" runat="server" OnClick="lbtnSignIn_Click">Sign In</asp:LinkButton>
+
                          &nbsp;&nbsp;
                          <a class="btn btn-lg btn-light" onclick="showLandingMenu()">&nbsp;Cancel</a>
                     </div>
                 </div>
 
             </div>
+
 
             <div class="row" id="createAccountTitle">
                 <div class="col-md-2"></div>

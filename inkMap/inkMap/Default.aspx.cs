@@ -65,11 +65,11 @@ namespace inkMap
                 txtEmail.Text = cookie.Values["UserName"].ToString();
                 txtPass.Text = plainTextPassword;
 
-                
 
-                
+
+
             }
-            
+
 
         }
         protected void saveLogIn_Click(object sender, EventArgs e)
@@ -114,7 +114,7 @@ namespace inkMap
         }
         protected void deleteLogIn_Click(object sender, EventArgs e)
         {
-           if(Request.Cookies["Login"] != null)
+            if (Request.Cookies["Login"] != null)
             {
                 Response.Cookies["Login"].Expires = DateTime.Now.AddDays(-1);
             }
@@ -124,7 +124,7 @@ namespace inkMap
             txtPass.Text = " ";
         }
 
-        public void NewAccount (Account account)
+        public void NewAccount(Account account)
         {
             NewAccountService.Account AccountInfo = new NewAccountService.Account();
 
@@ -176,15 +176,16 @@ namespace inkMap
             if (proxy.AddCustomer(customer))
             {
                 DataSet userData = procedure.getaccountidfromemail(txtCustomerEmail.Text);
-                Email verificationEmail = new Email();
-                string receiveremail = txtCustomerEmail.Text;
-                string senderEmail = "verify@inkmap.com";
-                string subject = "Verify your account";
+                //Email verificationEmail = new Email();
+                //string receiveremail = txtCustomerEmail.Text;
+                //string senderEmail = "verify@inkmap.com";
+                //string subject = "Verify your account";
                 int account = int.Parse(userData.Tables[0].Rows[0]["Account_ID"].ToString());
 
-                string body = "Please refer to this URL to confirm your account creation. http://localhost:63822/verification.aspx?ID=" + account;
-                verificationEmail.SendMail(receiveremail, senderEmail, subject, body);
+                //string body = "Please refer to this URL to confirm your account creation. http://localhost:63822/verification.aspx?ID=" + account;
+                //verificationEmail.SendMail(receiveremail, senderEmail, subject, body);
 
+                Response.Redirect("verification.aspx?ID=" + account);
                 lblStoreName.Text = "Customer Account was created successfully!";
 
             }
@@ -220,7 +221,7 @@ namespace inkMap
             artist.certification = txtArtistCert.Text;
             artist.city = txtArtistCity.Text;
             artist.state = txtArtistState.Text;
-            artist.zipcode= txtArtistZipcode.Text;
+            artist.zipcode = txtArtistZipcode.Text;
             artist.streetAddress = txtArtistStreetAddress.Text;
             artist.address2 = txtArtistAddress2.Text;
 
@@ -229,15 +230,16 @@ namespace inkMap
             if (proxy.AddArtist(artist))
             {
                 DataSet userData = procedure.getaccountidfromemail(txtArtistEmail.Text);
-                Email verificationEmail = new Email();
-                string receiveremail = txtCustomerEmail.Text;
-                string senderEmail = "verify@inkmap.com";
-                string subject = "Verify your account";
+                //Email verificationEmail = new Email();
+                //string receiveremail = txtCustomerEmail.Text;
+                //string senderEmail = "verify@inkmap.com";
+                //string subject = "Verify your account";
                 int account = int.Parse(userData.Tables[0].Rows[0]["Account_ID"].ToString());
 
-                string body = "Please refer to this URL to confirm your account creation. http://localhost:63822/verification.aspx?ID=" + account;
-                verificationEmail.SendMail(receiveremail, senderEmail, subject, body);
+                //string body = "Please refer to this URL to confirm your account creation. http://localhost:63822/verification.aspx?ID=" + account;
+                //verificationEmail.SendMail(receiveremail, senderEmail, subject, body);
 
+                Response.Redirect("verification.aspx?ID=" + account);
                 lblStoreName.Text = "Artist Account was created successfully!";
 
             }
@@ -250,6 +252,36 @@ namespace inkMap
 
         }
 
+        protected void lbtnSignIn_Click(object sender, EventArgs e)
+        {
+            string email = txtEmail.Text;
+            string enteredpass = txtPass.Text;
+           
+            DataSet accountinfo = procedure.getaccountidfromemail(email);
+            int account = int.Parse(accountinfo.Tables[0].Rows[0]["Account_ID"].ToString());
 
+            DataSet passinfo = procedure.getpassword(account);
+            string password = passinfo.Tables[0].Rows[0]["Password"].ToString();
+
+            DataSet type = procedure.getaccounttype(account);
+            string accType = type.Tables[0].Rows[0]["AccountType"].ToString();
+
+            DataSet verification = procedure.getverification(account);
+            int verifactionCode = int.Parse(verification.Tables[0].Rows[0]["Verification"].ToString());
+
+            if (accType == "artist" && verifactionCode == 1 && password == enteredpass)
+            {
+                Response.Redirect("ArtistLandingPage.aspx?ID="+account);
+            }
+            else if (accType == "customer" && verifactionCode == 1 && password == enteredpass)
+            {
+                Response.Redirect("CustomerLandingPage.aspx?ID="+account );
+            }
+            else
+            {
+                Response.Write("<script>alert('Your account has not been verified. Please check your email for verification details.')</script>");
+
+            }
+        }
     }
 }

@@ -1,8 +1,9 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ArtistLandingPage.aspx.cs" Inherits="inkMap.ArtistLandingPage" %>
 
-<%@ Register Src="~/CustomerMainNav.ascx" TagPrefix="uc1" TagName="CustomerMainNav" %>
 <%@ Register Src="~/ArtistSideNav.ascx" TagPrefix="uc1" TagName="ArtistSideNav" %>
 <%@ Register Src="~/ArtistPortfolio.ascx" TagPrefix="uc1" TagName="ArtistPortfolio" %>
+<%@ Register Src="~/ArtistMainNavascx.ascx" TagPrefix="uc1" TagName="ArtistMainNavascx" %>
+
 
 
 
@@ -19,7 +20,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <uc1:CustomerMainNav runat="server" ID="CustomerMainNav" />
+        <uc1:ArtistMainNavascx runat="server" id="ArtistMainNavascx" />
         <div>
             <uc1:ArtistSideNav runat="server" ID="ArtistSideNav" />
         </div>

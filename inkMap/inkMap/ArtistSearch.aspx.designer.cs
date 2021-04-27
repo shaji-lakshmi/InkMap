@@ -13,13 +13,13 @@ namespace inkMap {
     public partial class ArtistSearch {
         
         /// <summary>
-        /// CustomerMainNav control.
+        /// ArtistMainNavascx control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::inkMap.CustomerMainNav CustomerMainNav;
+        protected global::inkMap.ArtistMainNavascx ArtistMainNavascx;
         
         /// <summary>
         /// ArtistSideNav control.
@@ -49,48 +49,30 @@ namespace inkMap {
         protected global::System.Web.UI.WebControls.Button btnLocationSearch;
         
         /// <summary>
-        /// lblArtistFName control.
+        /// lbtnViewProfile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblArtistFName;
+        protected global::System.Web.UI.WebControls.LinkButton lbtnViewProfile;
         
         /// <summary>
-        /// lblArtistLName control.
+        /// lblNoresults control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblArtistLName;
+        protected global::System.Web.UI.WebControls.Label lblNoresults;
         
         /// <summary>
-        /// lblCompany control.
+        /// rptsearchResults control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCompany;
-        
-        /// <summary>
-        /// lblCity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCity;
-        
-        /// <summary>
-        /// lblState control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblState;
+        protected global::System.Web.UI.WebControls.Repeater rptsearchResults;
     }
 }

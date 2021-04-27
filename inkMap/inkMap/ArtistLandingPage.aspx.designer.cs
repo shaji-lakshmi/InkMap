@@ -22,13 +22,13 @@ namespace inkMap {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// CustomerMainNav control.
+        /// ArtistMainNavascx control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::inkMap.CustomerMainNav CustomerMainNav;
+        protected global::inkMap.ArtistMainNavascx ArtistMainNavascx;
         
         /// <summary>
         /// ArtistSideNav control.

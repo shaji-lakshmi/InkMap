@@ -71,11 +71,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
+    <Compile Include="Appointment.cs" />
     <Compile Include="Artist.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="dbProcedures.cs" />
     <Compile Include="Email.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Testimonial.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

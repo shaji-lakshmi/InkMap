@@ -67,7 +67,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ArtisrProfileGrab.ascx" />
     <Content Include="ArtistLandingPage.aspx" />
+    <Content Include="ArtistMainNavascx.ascx" />
     <Content Include="ArtistPortfolio.ascx" />
     <Content Include="ArtistPortfolioCreation.aspx" />
     <Content Include="ArtistProfileCreation.aspx" />
@@ -88,23 +90,35 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="GetArtistProfile.aspx" />
     <Content Include="NavigationBar.ascx" />
     <Content Include="PortImagesGrab.aspx" />
     <Content Include="profileImageGrab.aspx" />
     <Content Include="verification.aspx" />
-    <Content Include="Web References\NewAccountService\Artist.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
     <None Include="Web References\NewAccountService\NewAccount.disco" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArtisrProfileGrab.ascx.cs">
+      <DependentUpon>ArtisrProfileGrab.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArtisrProfileGrab.ascx.designer.cs">
+      <DependentUpon>ArtisrProfileGrab.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ArtistLandingPage.aspx.cs">
       <DependentUpon>ArtistLandingPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ArtistLandingPage.aspx.designer.cs">
       <DependentUpon>ArtistLandingPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistMainNavascx.ascx.cs">
+      <DependentUpon>ArtistMainNavascx.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArtistMainNavascx.ascx.designer.cs">
+      <DependentUpon>ArtistMainNavascx.ascx</DependentUpon>
     </Compile>
     <Compile Include="ArtistPortfolio.ascx.cs">
       <DependentUpon>ArtistPortfolio.ascx</DependentUpon>
@@ -175,6 +189,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetArtistProfile.aspx.cs">
+      <DependentUpon>GetArtistProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetArtistProfile.aspx.designer.cs">
+      <DependentUpon>GetArtistProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="NavigationBar.ascx.cs">
       <DependentUpon>NavigationBar.ascx</DependentUpon>

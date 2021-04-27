@@ -56,7 +56,7 @@ namespace inkMap
                     if (fileExtension == ".jpg" || fileExtension == ".jpeg" || fileExtension == ".png")
                     {
                         int updateDB = procedure.updatePortfolioPic(accountid, imgName, imgType, imageData, imageData.Length);
-                        Response.Redirect("ArtistLandinPage.aspx?ID="+accountid); 
+                        Response.Redirect("ArtistLandingPage.aspx?ID="+accountid); 
                     }
                     else
                     {

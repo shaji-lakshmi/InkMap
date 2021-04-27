@@ -20,6 +20,7 @@ namespace InkMapLibrary
         public String zipcode;
         public String streetAddress;
         public String address2;
+        public int artist_ID;
 
         public String Artist_FName
         {
@@ -81,5 +82,12 @@ namespace InkMapLibrary
             get { return address2; }
             set { address2 = value; }
         }
+
+        public int Artist_ID
+        {
+            get { return artist_ID; }
+            set { artist_ID = value; }
+        }
+
     }
 }

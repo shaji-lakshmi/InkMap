@@ -28,18 +28,16 @@
              <asp:Label ID="lblRating" runat="server" Text="Label"></asp:Label>
              
              </div>
-             
 
-
-             
          </div>
 
-         <div class="row">
-              <asp:Repeater ID="rptImages" runat="server">
+            <div class="row">
+                
+                      <asp:Repeater ID="rptImages" runat="server">
                 <ItemTemplate>
                     <asp:Image ID="Image1"  runat="server" ImageUrl='<%#Eval("imgFile") %>' Width="250px" Height="250px"/><br />
                 </ItemTemplate>
             </asp:Repeater>
-         </div>
+                </div>
      </div>
 

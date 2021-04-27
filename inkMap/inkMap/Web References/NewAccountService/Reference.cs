@@ -27,6 +27,7 @@ namespace inkMap.NewAccountService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="NewAccountSoap", Namespace="http://tempuri.org/")]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(object[]))]
     public partial class NewAccount : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
         private System.Threading.SendOrPostCallback AddAccountOperationCompleted;
@@ -36,6 +37,10 @@ namespace inkMap.NewAccountService {
         private System.Threading.SendOrPostCallback AddCustomerOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetArtistByZipOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback AddTestimonialOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ScheduleAppointmentOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -86,6 +91,12 @@ namespace inkMap.NewAccountService {
         
         /// <remarks/>
         public event GetArtistByZipCompletedEventHandler GetArtistByZipCompleted;
+        
+        /// <remarks/>
+        public event AddTestimonialCompletedEventHandler AddTestimonialCompleted;
+        
+        /// <remarks/>
+        public event ScheduleAppointmentCompletedEventHandler ScheduleAppointmentCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/AddAccount", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -176,10 +187,10 @@ namespace inkMap.NewAccountService {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetArtistByZip", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Artist GetArtistByZip(string zip) {
+        public object[] GetArtistByZip(string zip) {
             object[] results = this.Invoke("GetArtistByZip", new object[] {
                         zip});
-            return ((Artist)(results[0]));
+            return ((object[])(results[0]));
         }
         
         /// <remarks/>
@@ -200,6 +211,64 @@ namespace inkMap.NewAccountService {
             if ((this.GetArtistByZipCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.GetArtistByZipCompleted(this, new GetArtistByZipCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/AddTestimonial", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool AddTestimonial(Testimonial comment) {
+            object[] results = this.Invoke("AddTestimonial", new object[] {
+                        comment});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void AddTestimonialAsync(Testimonial comment) {
+            this.AddTestimonialAsync(comment, null);
+        }
+        
+        /// <remarks/>
+        public void AddTestimonialAsync(Testimonial comment, object userState) {
+            if ((this.AddTestimonialOperationCompleted == null)) {
+                this.AddTestimonialOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAddTestimonialOperationCompleted);
+            }
+            this.InvokeAsync("AddTestimonial", new object[] {
+                        comment}, this.AddTestimonialOperationCompleted, userState);
+        }
+        
+        private void OnAddTestimonialOperationCompleted(object arg) {
+            if ((this.AddTestimonialCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.AddTestimonialCompleted(this, new AddTestimonialCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ScheduleAppointment", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool ScheduleAppointment(Appointment appt) {
+            object[] results = this.Invoke("ScheduleAppointment", new object[] {
+                        appt});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ScheduleAppointmentAsync(Appointment appt) {
+            this.ScheduleAppointmentAsync(appt, null);
+        }
+        
+        /// <remarks/>
+        public void ScheduleAppointmentAsync(Appointment appt, object userState) {
+            if ((this.ScheduleAppointmentOperationCompleted == null)) {
+                this.ScheduleAppointmentOperationCompleted = new System.Threading.SendOrPostCallback(this.OnScheduleAppointmentOperationCompleted);
+            }
+            this.InvokeAsync("ScheduleAppointment", new object[] {
+                        appt}, this.ScheduleAppointmentOperationCompleted, userState);
+        }
+        
+        private void OnScheduleAppointmentOperationCompleted(object arg) {
+            if ((this.ScheduleAppointmentCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ScheduleAppointmentCompleted(this, new ScheduleAppointmentCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -381,6 +450,288 @@ namespace inkMap.NewAccountService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class Testimonial {
+        
+        private int testimonial_IDField;
+        
+        private int artist_IDField;
+        
+        private int cust_IDField;
+        
+        private string titleField;
+        
+        private string bodyField;
+        
+        private string artist_FNameField;
+        
+        private string artist_LNameField;
+        
+        private int testimonial_IDField1;
+        
+        private int artist_IDField1;
+        
+        private int cust_IDField1;
+        
+        private string titleField1;
+        
+        private string bodyField1;
+        
+        private string artist_FNameField1;
+        
+        private string artist_LNameField1;
+        
+        /// <remarks/>
+        public int testimonial_ID {
+            get {
+                return this.testimonial_IDField;
+            }
+            set {
+                this.testimonial_IDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int artist_ID {
+            get {
+                return this.artist_IDField;
+            }
+            set {
+                this.artist_IDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int cust_ID {
+            get {
+                return this.cust_IDField;
+            }
+            set {
+                this.cust_IDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string title {
+            get {
+                return this.titleField;
+            }
+            set {
+                this.titleField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string body {
+            get {
+                return this.bodyField;
+            }
+            set {
+                this.bodyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string artist_FName {
+            get {
+                return this.artist_FNameField;
+            }
+            set {
+                this.artist_FNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string artist_LName {
+            get {
+                return this.artist_LNameField;
+            }
+            set {
+                this.artist_LNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Testimonial_ID {
+            get {
+                return this.testimonial_IDField1;
+            }
+            set {
+                this.testimonial_IDField1 = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Artist_ID {
+            get {
+                return this.artist_IDField1;
+            }
+            set {
+                this.artist_IDField1 = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Cust_ID {
+            get {
+                return this.cust_IDField1;
+            }
+            set {
+                this.cust_IDField1 = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Title {
+            get {
+                return this.titleField1;
+            }
+            set {
+                this.titleField1 = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Body {
+            get {
+                return this.bodyField1;
+            }
+            set {
+                this.bodyField1 = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Artist_FName {
+            get {
+                return this.artist_FNameField1;
+            }
+            set {
+                this.artist_FNameField1 = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Artist_LName {
+            get {
+                return this.artist_LNameField1;
+            }
+            set {
+                this.artist_LNameField1 = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class Appointment {
+        
+        private int artist_IDField;
+        
+        private int cust_IDField;
+        
+        private string dateField;
+        
+        private string timeField;
+        
+        private int artist_IDField1;
+        
+        private int cust_IDField1;
+        
+        private string dateField1;
+        
+        private string timeField1;
+        
+        /// <remarks/>
+        public int artist_ID {
+            get {
+                return this.artist_IDField;
+            }
+            set {
+                this.artist_IDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int cust_ID {
+            get {
+                return this.cust_IDField;
+            }
+            set {
+                this.cust_IDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string date {
+            get {
+                return this.dateField;
+            }
+            set {
+                this.dateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string time {
+            get {
+                return this.timeField;
+            }
+            set {
+                this.timeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Artist_ID {
+            get {
+                return this.artist_IDField1;
+            }
+            set {
+                this.artist_IDField1 = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Cust_ID {
+            get {
+                return this.cust_IDField1;
+            }
+            set {
+                this.cust_IDField1 = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Date {
+            get {
+                return this.dateField1;
+            }
+            set {
+                this.dateField1 = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Time {
+            get {
+                return this.timeField1;
+            }
+            set {
+                this.timeField1 = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public partial class Artist {
         
         private string artist_FNameField;
@@ -407,6 +758,8 @@ namespace inkMap.NewAccountService {
         
         private string address2Field;
         
+        private int artist_IDField;
+        
         private string artist_FNameField1;
         
         private string artist_LNameField1;
@@ -430,6 +783,8 @@ namespace inkMap.NewAccountService {
         private string streetAddressField1;
         
         private string address2Field1;
+        
+        private int artist_IDField1;
         
         /// <remarks/>
         public string artist_FName {
@@ -552,6 +907,16 @@ namespace inkMap.NewAccountService {
         }
         
         /// <remarks/>
+        public int artist_ID {
+            get {
+                return this.artist_IDField;
+            }
+            set {
+                this.artist_IDField = value;
+            }
+        }
+        
+        /// <remarks/>
         public string Artist_FName {
             get {
                 return this.artist_FNameField1;
@@ -670,6 +1035,16 @@ namespace inkMap.NewAccountService {
                 this.address2Field1 = value;
             }
         }
+        
+        /// <remarks/>
+        public int Artist_ID {
+            get {
+                return this.artist_IDField1;
+            }
+            set {
+                this.artist_IDField1 = value;
+            }
+        }
     }
     
     /// <remarks/>
@@ -768,10 +1143,62 @@ namespace inkMap.NewAccountService {
         }
         
         /// <remarks/>
-        public Artist Result {
+        public object[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((Artist)(this.results[0]));
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void AddTestimonialCompletedEventHandler(object sender, AddTestimonialCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class AddTestimonialCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal AddTestimonialCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void ScheduleAppointmentCompletedEventHandler(object sender, ScheduleAppointmentCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ScheduleAppointmentCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ScheduleAppointmentCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
             }
         }
     }

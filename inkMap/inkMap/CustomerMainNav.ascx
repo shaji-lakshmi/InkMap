@@ -7,7 +7,6 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link" href="#">Profile<span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="#">Settings</a>
       <a class="nav-item nav-link" href="Default.aspx">Logout</a>
     </div>

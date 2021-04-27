@@ -75,7 +75,7 @@ namespace inkMap
 
 
                 }
-                    Response.Redirect("CustomerLandingPage.aspx?ID=" + accountid);
+                    Response.Redirect("ArtistSearch.aspx=ID=" + accountid);
              
             }catch{
 

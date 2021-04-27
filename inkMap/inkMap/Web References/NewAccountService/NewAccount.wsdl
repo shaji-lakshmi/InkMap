@@ -53,6 +53,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="zipcode" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="streetAddress" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="address2" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="artist_ID" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="Artist_FName" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Artist_LName" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
@@ -65,6 +66,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Zipcode" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="StreetAddress" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Artist_ID" type="s:int" />
         </s:sequence>
       </s:complexType>
       <s:element name="AddArtistResponse">
@@ -98,7 +100,70 @@
       <s:element name="GetArtistByZipResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetArtistByZipResult" type="tns:Artist" />
+            <s:element minOccurs="0" maxOccurs="1" name="GetArtistByZipResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Appointment">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="artist_ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="cust_ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="time" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Artist_ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cust_ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Date" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Time" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Testimonial">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="testimonial_ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="artist_ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="cust_ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="body" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="artist_FName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="artist_LName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Testimonial_ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Artist_ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cust_ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Body" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Artist_FName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Artist_LName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddTestimonial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="comment" type="tns:Testimonial" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTestimonialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddTestimonialResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ScheduleAppointment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="appt" type="tns:Appointment" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ScheduleAppointmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ScheduleAppointmentResult" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -128,6 +193,18 @@
   <wsdl:message name="GetArtistByZipSoapOut">
     <wsdl:part name="parameters" element="tns:GetArtistByZipResponse" />
   </wsdl:message>
+  <wsdl:message name="AddTestimonialSoapIn">
+    <wsdl:part name="parameters" element="tns:AddTestimonial" />
+  </wsdl:message>
+  <wsdl:message name="AddTestimonialSoapOut">
+    <wsdl:part name="parameters" element="tns:AddTestimonialResponse" />
+  </wsdl:message>
+  <wsdl:message name="ScheduleAppointmentSoapIn">
+    <wsdl:part name="parameters" element="tns:ScheduleAppointment" />
+  </wsdl:message>
+  <wsdl:message name="ScheduleAppointmentSoapOut">
+    <wsdl:part name="parameters" element="tns:ScheduleAppointmentResponse" />
+  </wsdl:message>
   <wsdl:portType name="NewAccountSoap">
     <wsdl:operation name="AddAccount">
       <wsdl:input message="tns:AddAccountSoapIn" />
@@ -144,6 +221,14 @@
     <wsdl:operation name="GetArtistByZip">
       <wsdl:input message="tns:GetArtistByZipSoapIn" />
       <wsdl:output message="tns:GetArtistByZipSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTestimonial">
+      <wsdl:input message="tns:AddTestimonialSoapIn" />
+      <wsdl:output message="tns:AddTestimonialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleAppointment">
+      <wsdl:input message="tns:ScheduleAppointmentSoapIn" />
+      <wsdl:output message="tns:ScheduleAppointmentSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NewAccountSoap" type="tns:NewAccountSoap">
@@ -184,6 +269,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="AddTestimonial">
+      <soap:operation soapAction="http://tempuri.org/AddTestimonial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleAppointment">
+      <soap:operation soapAction="http://tempuri.org/ScheduleAppointment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="NewAccountSoap12" type="tns:NewAccountSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -216,6 +319,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetArtistByZip">
       <soap12:operation soapAction="http://tempuri.org/GetArtistByZip" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTestimonial">
+      <soap12:operation soapAction="http://tempuri.org/AddTestimonial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleAppointment">
+      <soap12:operation soapAction="http://tempuri.org/ScheduleAppointment" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

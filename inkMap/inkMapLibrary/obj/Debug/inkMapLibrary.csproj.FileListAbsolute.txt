@@ -164,3 +164,4 @@ C:\Users\Lakshmi\Desktop\InkMap\inkMap\InkMapLibrary\obj\Debug\InkMapLibrary.csp
 C:\Users\Lakshmi\Desktop\InkMap\inkMap\InkMapLibrary\obj\Debug\InkMapLibrary.csproj.CopyComplete
 C:\Users\Lakshmi\Desktop\InkMap\inkMap\InkMapLibrary\obj\Debug\InkMapLibrary.dll
 C:\Users\Lakshmi\Desktop\InkMap\inkMap\InkMapLibrary\obj\Debug\InkMapLibrary.pdb
+C:\Users\Lakshmi\Desktop\InkMap\inkMap\InkMapLibrary\obj\Debug\InkMapLibrary.csprojAssemblyReference.cache

@@ -38,4 +38,3 @@ C:\Users\Lakshmi\Desktop\InkMap\inkMap\InkMapAPI\obj\Debug\netcoreapp2.1\InkMapA
 C:\Users\Lakshmi\Desktop\InkMap\inkMap\InkMapAPI\obj\Debug\netcoreapp2.1\InkMapAPI.RazorTargetAssemblyInfo.cache
 C:\Users\Lakshmi\Desktop\InkMap\inkMap\InkMapAPI\obj\Debug\netcoreapp2.1\InkMapAPI.dll
 C:\Users\Lakshmi\Desktop\InkMap\inkMap\InkMapAPI\obj\Debug\netcoreapp2.1\InkMapAPI.pdb
-C:\Users\Lakshmi\Desktop\InkMap\inkMap\InkMapAPI\obj\Debug\netcoreapp2.1\InkMapAPI.csprojAssemblyReference.cache
